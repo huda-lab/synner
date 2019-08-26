@@ -26,7 +26,7 @@ This repository contains:
 
 Synner's source code and the datasets we used for our publications.
 
-## How to run
+## How to run Synner
 
 Synner can be run as a server, which also provides the user interface, or as a command line interface application.
 
