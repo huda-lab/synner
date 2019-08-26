@@ -1,0 +1,123 @@
+<div id="synner-data-table">
+    <table>
+        <tr>
+            <td>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th ng-repeat="f in model.fields"
+                            class="field-header"
+                            ng-class="{'selected': _selectedField.obj != null && _selectedField.obj.id == f.id}">
+                            <input class="field-name" type="text" ng-model="f.name" ng-change="checkDuplicates(f)"
+                                   ng-class="{'field-name-error': f.hasFieldNameError}" limit-chars-for-fields
+                                   ng-focus="selectField(f)">
+                            <div class="field-properties-and-actions">
+                                <select ng-model="f.type" class="type-select label label-default" ng-change="changeFieldType(f.id)">
+                                    <option value="integer">1234</option>
+                                    <option value="decimal">1.123</option>
+                                    <option value="string">abcd</option>
+                                    <option value="time">13:42</option>
+                                    <option value="date">09/12</option>
+                                </select>
+                                <i class="fa fa-exclamation-triangle"
+                                   title="Missing and Error values"
+                                   ng-class="{'missingerror-on': f.missingRows, 'missingerror-on': f.errorRows, 'missingerror-off': (!f.missingRows && !f.errorRows)}"
+                                   ng-click="editMissingError(f)"></i>
+                                <i class="fa fa-filter"
+                                   title="Filter"
+                                   ng-class="{'filter-on': f.filter, 'filter-off': (!f.filter || f.filter.length === 0)}"
+                                   ng-click="editFilter(f)"></i>
+                                <i class="fa field-hide" ng-class="{'fa-eye-slash': f.hidden, 'fa-eye': !f.hidden}"
+                                   title="Show/Hide Column"
+                                   ng-click="hideColumn(f)"></i>
+                                <i class="fa fa-remove field-remove"
+                                   title="Delete Column"
+                                   ng-click="removeColumn(f)"></i>
+                            </div>
+                        </th>
+                    <tr>
+                        <th ng-repeat="f in model.fields" class="field-header"
+                            ng-class="{'selected': _selectedField.obj != null && _selectedField.obj.id == f.id}">
+                            <visual-summary field="f"></visual-summary>
+                            <field-filter field="f"></field-filter>
+                            <field-error-missings field="f"></field-error-missings>
+                        </th>
+                        <th class="field-data-last-col"></th>
+                    </tr>
+                    <tr>
+                        <th ng-repeat="f in model.fields" class="field-header field-header-dependencies"
+                            ng-class="{'selected': _selectedField.obj != null && _selectedField.obj.id == f.id}">
+                            <dependencies-list field="f"></dependencies-list>
+                        </th>
+                    </tr>
+
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="row in model.data" ng-attr-id="{{'data-row-' + $index}}">
+                        <td ng-repeat="f in model.fields"
+                            ng-class="{'selected': _selectedField.obj != null && _selectedField.obj.id == f.id, 'numerical-row': f.type == 'decimal' || f.type == 'integer'}"
+                            class="field-data">
+                            <i ng-show="row[$index].l" class="fa fa-lock"></i>
+                            <input type="date" ng-if="f.type == 'date'" ng-model="row[$index].v"
+                                   ng-change="changeDataValue(row[$index], f)"
+                                   ng-class="{'special-value': row[$index].s}"
+                                   tabindex="{{$parent.$index + model.dataRows * f.id}}"
+                                   ng-focus="selectField(f)">
+                            <input type="time" ng-if="f.type == 'time'" ng-model="row[$index].v"
+                                   ng-change="changeDataValue(row[$index], f)"
+                                   ng-class="{'special-value': row[$index].s}"
+                                   tabindex="{{$parent.$index + model.dataRows * f.id}}"
+                                   ng-focus="selectField(f)">
+                            <input type="text" ng-if="f.type == 'string'" ng-model="row[$index].v"
+                                   ng-change="changeDataValue(row[$index], f)"
+                                   ng-class="{'special-value': row[$index].s}"
+                                   tabindex="{{$parent.$index + model.dataRows * f.id}}"
+                                   ng-focus="selectField(f)">
+                            <input type="number" ng-if="f.type == 'decimal' || f.type == 'integer'" ng-model="row[$index].v"
+                                   ng-change="changeDataValue(row[$index], f)"
+                                   ng-class="{'special-value': row[$index].s}"
+                                   style="text-align: right;"
+                                   tabindex="{{$parent.$index + model.dataRows * f.id}}"
+                                   ng-focus="selectField(f)">
+                        </td>
+                        <td class="field-data-last-col"></td>
+                    </tr>
+                    <tr class="add-rows-button-row">
+                        <td colspan="{{model.fields.length}}"
+                            ng-click="addRows()">
+                            <i class="fa fa-angle-double-down"></i>
+                        </td>
+                        <td class="field-data-last-col"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </td>
+            <td class="add-column-column">
+                <div class="add-column-button">
+                    <div class="dropdown">
+                        <button class="btn btn-default btn-xxs dropdown-toggle" type="button" data-toggle="dropdown">
+                            +
+                        </button>
+                        <ul class="dropdown-menu dropdown-left-manual">
+                            <li><a href="javascript:void(0)" ng-click="addColumn('integer')">Integer
+                                <small>1234</small>
+                            </a></li>
+                            <li><a href="javascript:void(0)" ng-click="addColumn('decimal')">Decimal
+                                <small>1.123</small>
+                            </a></li>
+                            <li><a href="javascript:void(0)" ng-click="addColumn('string')">Text
+                                <small>abcd</small>
+                            </a></li>
+                            <li><a href="javascript:void(0)" ng-click="addColumn('time')">Time
+                                <small>12:34</small>
+                            </a></li>
+                            <li><a href="javascript:void(0)" ng-click="addColumn('date')">Date
+                                <small>14/12/2010</small>
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,39 @@
+.visual-summary {
+
+  .textual-summary {
+    font-weight: 400;
+    font-size: 11px;
+    height: 15px;
+  }
+
+  .chart {
+    width: 100%;
+    height: 40px;
+
+    .odd {
+      fill: #6D7993;
+    }
+
+    .even {
+      fill: steelblue;
+    }
+
+    rect {
+      fill: steelblue;
+
+      &.missing {
+        fill: #b9b9b9;
+      }
+
+      &.error {
+        fill: #d05b5b;
+      }
+    }
+
+    text {
+      fill: white;
+      font: 10px sans-serif;
+      text-anchor: end;
+    }
+  }
+}

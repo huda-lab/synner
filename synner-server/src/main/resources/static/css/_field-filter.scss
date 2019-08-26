@@ -1,0 +1,61 @@
+#synner-data-table .field-filter {
+  $confirm-button-width: 36px;
+  $confirm-button-height: 23px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #ddd;
+  border-right: none;
+  border-left: none;
+
+  input[type=text].field-filter-text {
+    display: block;
+    margin: 5px;
+    font-weight: normal;
+    font-family: monospace;
+    width: $table-column-width - $confirm-button-width - 10px;
+    border: 1px solid #fff;
+
+    &.has-error {
+      border: 1px solid red;
+    }
+
+  }
+
+  .field-filter-error {
+    margin: 5px;
+    font-weight: normal;
+    color: red;
+    max-width: $table-column-width - $confirm-button-width - 10px;
+    width: $table-column-width - $confirm-button-width - 10px;
+    white-space: normal;
+  }
+
+  .confirm-dialog {
+    width: $confirm-button-width;
+    height: $confirm-button-height;
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    .has-error {
+      color: #ddd;
+    }
+  }
+
+  //.dropdown-menu {
+  //  background: #f7f7f7;
+  //  padding: 5px;
+  //
+  //  .field-filter {
+  //    font-weight: normal;
+  //    background: white !important;
+  //    border: 1px solid #ccc;
+  //    font-family: monospace;
+  //  }
+  //}
+}

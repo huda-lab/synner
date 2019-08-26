@@ -1,0 +1,57 @@
+<div class="generator-string-enum">
+    <table>
+        <tr>
+            <th class="cases-header">Value</th>
+            <th colspan="3" class="cases-hist-filler-header"></th>
+            <th class="cases-header cases-header-freqpb">Distribution</th>
+        </tr>
+        <tr class="case-row" ng-repeat="case in cases">
+            <td class="case-value">
+                <div class="input-group">
+                    <input type="text" class="form-control"
+                           id="string-value" placeholder="new value" ng-model="case.value"
+                           ng-class="{'void-input': case.value.length == 0}">
+                    <span class="input-group-btn" ng-show="case.value.length > 0">
+                            <button class="btn btn-default btn-xs" type="button"
+                                    ng-click="case.isRegExp = !case.isRegExp;"
+                                    ng-class="{'btn-default-deselected': case.isRegExp !== true}">a<sup>*</sup></button>
+                        <!--<input type="checkbox" value="regexp" id="is-regexp" ng-model="case.isRegExp"> Regex-->
+                        </span>
+                </div>
+            </td>
+            <td ng-show="case.value.length > 0">
+                <div class="case-hist-filler">&nbsp;&nbsp;&nbsp;</div>
+            </td>
+            <td class="case-freq-value" ng-show="case.value.length > 0">
+                <input type="number" min="1" max="100" ng-maxlength="2" ng-model="case.freq" class="ghost-editable freq-value">
+            </td>
+            <td ng-show="case.value.length > 0">
+                <div class="case-hist-filler">&nbsp;&nbsp;&nbsp;</div>
+            </td>
+            <td class="case-freqpb" ng-show="case.value.length > 0">
+                <div class="progress" ng-show="case.value.length > 0"
+                     ng-mouseenter="pghover = true"
+                     ng-mouseleave="pghover = false"
+                     ng-class="{'pg-hover' : pghover}">
+
+                    <div class="progress-bar"
+                         role="progressbar"
+                         ng-style="{width: ((case.freq / freqSum * 100) + '%')}">
+                    </div>
+                    <div class="simexperiments-container">
+                        <div class="simres" ng-repeat="sim in case.simulations" ng-style="{left: (sim.initPerc * 100) + '%', width: (sim.width * 100) + '%'}"></div>
+                    </div>
+                    <div class="freq-btn-increase"
+                         ng-style="{left: ((case.freq / freqSum * 100) + '%')}"
+                         ng-click="increaseFreq(case)">&gt;
+                    </div>
+                    <div class="freq-btn-decrease"
+                         ng-hide="case.freq <= 0"
+                         ng-style="{left: ((case.freq / freqSum * 100) + '%')}"
+                         ng-click="decreaseFreq(case)">&lt;
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

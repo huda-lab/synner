@@ -1,0 +1,17 @@
+@import "../vendor/bootstrap-sass-official/assets/stylesheets/bootstrap/variables";
+@import "../vendor/bootswatch-sass/yeti/variables";
+
+// Custom variables
+$font-size-base: 12px;
+$nav-link-padding: 5px 10px;
+$input-height-base: 20px;
+
+@import "../vendor/bootstrap-sass-official/assets/stylesheets/bootstrap";
+@import "../vendor/bootswatch-sass/yeti/bootswatch";
+
+// Font awesome
+$fa-font-path: "../vendor/font-awesome/fonts";
+@import "../vendor/font-awesome/scss/font-awesome";
+
+// AngularJS Slider
+@import "../vendor/angularjs-slider/dist/rzslider";

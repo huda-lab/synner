@@ -1,0 +1,16 @@
+#main-properties-panel {
+  min-height: 300px;
+
+  .main-panel-title {
+    display: inline-block;
+    writing-mode: tb-rl;
+    transform: rotate(-180deg);
+    float: left;
+    margin: 0.5em 0.3em 0.5em 0.3em;
+
+    > input, > div {
+      @extend .ghost-editable;
+      line-height: 0.1rem;
+    }
+  }
+}

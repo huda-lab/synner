@@ -1,0 +1,40 @@
+#synner-data-table .field-error-missings {
+  $confirm-button-width: 36px;
+  $confirm-button-height: 23px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #ddd;
+  border-right: none;
+  border-left: none;
+  padding: 5px;
+
+  input[type=range] {
+    display: inline-block;
+    margin: 0;
+    width: 50px;
+  }
+
+  .input-label {
+    font-weight: normal;
+    position: relative;
+    top: -3px;
+  }
+
+  .confirm-dialog {
+    width: $confirm-button-width;
+    height: $confirm-button-height;
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    .has-error {
+      color: #ddd;
+    }
+  }
+
+}

@@ -1,0 +1,84 @@
+.generator-domain {
+  $domain-list-max-height: $max-property-panel-height - 2 * $panels-padding - 25px;
+  $domain-list-max-width: 25em;
+
+  .domains-list-search {
+    margin-bottom: 10px;
+    display: inline-block;
+
+    .search-text-input {
+      padding-left: 6px;
+      width: auto;
+    }
+
+  }
+
+  .hr-separator {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  .use-frequencies {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+
+  .domain-join {
+    display: inline-block;
+    float: right;
+
+    select {
+      width: 200px;
+    }
+  }
+
+  .domains-list {
+    max-height: $domain-list-max-height;
+    overflow-y: auto;
+    margin: 0;
+
+    .domain-list-el {
+      margin: 0px 10px 10px 0;
+      border: 1px solid #ddd;
+      display: inline-block;
+      padding: 10px;
+
+      &.notavailable {
+        border-style: dashed;
+      }
+
+      .domain-title {
+        font-size: 120%;
+        margin-bottom: 5px;
+      }
+
+      .domain-examples {
+        font-size: 80%;
+      }
+
+      &:hover {
+        background: #ececec;
+        cursor: pointer;
+      }
+
+      &.active {
+        background: #b6b6b6;
+        border: 1px solid #666;
+      }
+    }
+  }
+
+  .domain-dependencies {
+    margin-top: 10px;
+  }
+
+  .subdomains-card {
+    padding-left: $panels-padding;
+  }
+
+  .input-group-addon {
+    min-width: 45px;
+  }
+
+}

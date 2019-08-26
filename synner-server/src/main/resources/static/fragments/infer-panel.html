@@ -1,0 +1,59 @@
+<div class="infer-panel">
+    <table ng-if="field.inferOptions">
+        <tr>
+            <td>
+                <div class="infer-panel-label" ng-if="field.inferOptions && field.inferOptions.length > 0">&nbsp;</div>
+                <div class="infer-suggestion-panel infer-suggestion-panel-default panel panel-default">
+                    <div class="panel-heading">
+                        Custom
+                    </div>
+                    <div class="panel-body">
+                        Design your own custom type
+                    </div>
+                    <div class="panel-footer">
+                        <button type="button" class="btn btn-primary btn-xs" ng-click="modify(field, field.inferDefaultOption)">Use</button>
+                    </div>
+                </div>
+            </td>
+            <td ng-if="field.inferOptions && field.inferOptions.length > 0" class="infer-default-panel-sep"></td>
+            <td ng-if="field.inferOptions && field.inferOptions.length > 0">
+                <div class="infer-panel-label">Suggested types</div>
+                <div class="infer-suggestion-panel-option-container">
+                    <div class="infer-suggestion-panel infer-suggestion-panel-option panel panel-default"
+                         ng-repeat="inferOption in field.inferOptions"
+                         ng-click="selectInferCategory(f)">
+                        <div class="panel-heading">
+                            {{inferOption.title}}
+                        </div>
+                        <div class="panel-body">
+                            <!--Body (domain/enumeraton/distribution)-->
+                            <p ng-if="inferOption.type === 'domain' || inferOption.type === 'time'
+                                                                    || inferOption.type === 'date'">
+                                <strong>Examples:</strong>
+                            </p>
+                            <p ng-if="inferOption.type === 'domain' || inferOption.type === 'enumeration'
+                                                                    || inferOption.type === 'distribution'
+                                                                    || inferOption.type === 'time'
+                                                                    || inferOption.type === 'date'"
+                               class="example" ng-repeat="line in inferOption.description track by $index">
+                                {{line}}
+                            </p>
+                            <p ng-if="inferOption.type === 'domain' || inferOption.type === 'enumeration'"
+                               class="example">
+                                ...
+                            </p>
+                            <input ng-if="inferOption.type === 'function'"
+                                   type="text" class="form-control function" placeholder="Name + 'abc'"
+                                   ng-model="inferOption.generator.function.value">
+                            <br/>
+                        </div>
+                        <div class="panel-footer">
+                            <!--Modify button-->
+                            <button type="button" class="btn btn-primary btn-xs" ng-click="modify(field, inferOption.generator)">Use</button>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

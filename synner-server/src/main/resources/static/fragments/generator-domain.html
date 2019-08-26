@@ -1,0 +1,32 @@
+<div class="generator-domain">
+
+    <div class="domains-list-search">
+        <label>Domain:</label>
+        <input class="form-control search-text-input" type="text" placeholder="Search domain..." ng-model="domainsListFiter">
+    </div>
+
+    <hr class="hr-separator" />
+
+    <div class="domain-join" ng-show="field.dependencies.length > 1">
+        Depends on:
+        <select ng-model="selectedDependency" ng-options="dep as dep.name for dep in field.dependencies"></select>
+    </div>
+
+    <div class="use-frequencies">
+        <label><input type="checkbox" checked="checked"> Use natural frequencies when available</label>
+    </div>
+
+    <div class="domains-list" ng-if="!compactView">
+        <div class="domain-group" ref="#" ng-repeat="(key, domains) in AVAILABLE_DOMAINS_AS_LIST | groupBy: 'category'">
+            <p class="domain-title" ng-if="(filteredDomains = domains|filter:{readableName: domainsListFiter}).length > 0">{{key}}</p>
+            <div class="domain-list-el" ref="#" id="{{'domain-' + domain.name}}"
+                 ng-repeat="domain in domains|filter:{readableName: domainsListFiter}"
+                 ng-click="changeDomain(domain.name)"
+                 ng-class="{'active': selectedDomain.name == domain.name, 'notavailable' : !domain.available}">
+                <div class="domain-title">{{domain.readableName}}</div>
+                <div ng-bind-html="domain.description | formatMd"></div>
+            </div>
+        </div>
+    </div>
+
+</div>

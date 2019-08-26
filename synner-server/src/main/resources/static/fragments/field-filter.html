@@ -1,0 +1,10 @@
+<div class="field-filter" ng-show="field.editingFilter">
+    <input class="field-filter-text" ng-class="{ 'has-error' : filterError }"
+           type="text" ng-model="fieldFilter" placeholder="ex. {{field.name}} != 'value'" on-enter-press="approveChanges()">
+    <div class="confirm-dialog">
+        <i class="fa fa-check" ng-class="{ 'has-error' : filterError }" ng-click="approveChanges()"></i>
+        <i class="fa fa-times" ng-click="discargeChanges()"></i>
+    </div>
+    <div class="field-filter-error" ng-show="filterError">{{filterError}}</div>
+
+</div>

@@ -1,0 +1,22 @@
+<div class="dependencies-list">
+    <div class="dependencies-label">Depends on: &nbsp;</div>
+    <div class="fields">
+        <span class="dependency label label-default"
+              ng-class="{'dependency-selected': field == _selectedField.obj}"
+              ng-click="selectField()"
+              ng-repeat="f in field.dependencies">
+            {{f.name}}
+            <i class="fa fa-remove" ng-click="deleteDependency(f)"></i>
+        </span>
+        <!--<select class="dependency-new label label-default"-->
+                <!--ng-model="newDependency"-->
+                <!--ng-options="field.name for field in compatibleFields track by field.id">-->
+            <!--<option value="" style="display: none">+</option>-->
+        <!--</select>-->
+        <select class="dependency-new label label-default"
+                ng-model="newDependency"
+                ng-options="item as item.name group by item.group for item in possibleDependencies">
+            <option value="" style="display: none">+</option>
+        </select>
+    </div>
+</div>

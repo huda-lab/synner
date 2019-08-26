@@ -1,0 +1,53 @@
+.navbar-default {
+  margin-bottom: 0 !important;
+
+  .load-save-model-dropdown {
+    width: 37px;
+    overflow: hidden;
+
+    input[type="file"] {
+      color: transparent;
+      display: inline-block;
+    }
+  }
+
+  .navbar-caption {
+    vertical-align: middle;
+    color: white;
+  }
+
+  .btn {
+    padding-top: 2px;
+    padding-bottom: 1px;
+  }
+
+  .data-volume {
+    margin-top: 11px;
+    margin-right: 0 !important;
+    input {
+      color: black;
+      width: 50px;
+      height: 1.5rem;
+      font-size: 13px;
+    }
+  }
+
+  .generation-status {
+    position: absolute;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+
+    .generation-status-progressbar {
+      background: #81b745;
+      width: 20%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      height: 100%;
+    }
+  }
+
+}

@@ -1,0 +1,55 @@
+{
+  "model": {
+    "name": {
+      "type": "string",
+      "generator": {
+        "regexp": "[AEIOU]([b-df-hj-np-tv-z]{1,2}[aeiou]){1,3}"
+      }
+    },
+    "gender": {
+      "type": "string",
+      "generator": {
+        "cases": [
+          {"value": "M"},
+          {"value": "F"}
+        ],
+        "ratios": [
+          48,
+          52
+        ]
+      }
+    },
+    "weight": {
+      "dependencies": ["gender"],
+      "type": "integer",
+      "generator": {
+        "switch": [
+          {
+            "case": "gender == 'M'",
+            "then": {
+              "value": 42
+            }
+          },
+          {
+            "case": "gender == 'F'",
+            "then": {
+              "distribution": "gaussian",
+              "mean": 40,
+              "stdev": 10
+            }
+          },
+          {
+            "default": {
+              "value": -1
+            }
+          }
+        ]
+      }
+    }
+  },
+  "data": {
+    "to-add": 10,
+    "tuples": [
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+<div class="generator-distribution-main">
+    <table class="generator-distribution-main-layout-table">
+        <tr>
+            <td class="distribution-chooser-td">
+                <div class="distribution-chooser">
+                    <label>Domain:&nbsp;</label>
+                    <div class="distributions-list list-group" ng-if="!compactView">
+                        <div href="#" ng-repeat="d in AVAILABLE_DISTRIBUTIONS"
+                             class="list-group-item list-group-item-action"
+                             ng-class="{'active': d.id == distributionId}"
+                             ng-click="changeDistributionId(d.id)">
+                            {{d.desc}}
+                        </div>
+                    </div>
+                    <select ng-model="distributionId" ng-if="compactView">
+                        <option ng-repeat="d in AVAILABLE_DISTRIBUTIONS" value="{{d.id}}">{{d.desc}}</option>
+                    </select>
+                </div>
+            </td>
+            <td class="distribution-container-td">
+                <div class="distribution-container" ng-switch="distributionId">
+                    <generator-distribution-custom ng-switch-when="custom" result="_result"
+                                         distribution="distributionId"
+                                         field="field"
+                                         compact-view="compactView">custom
+                    </generator-distribution-custom>
+                    <generator-distribution ng-switch-default result="_result"
+                                            distribution="distributionId"
+                                            field="field"
+                                            labels="labels"
+                                            compact-view="compactView">
+                    </generator-distribution>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

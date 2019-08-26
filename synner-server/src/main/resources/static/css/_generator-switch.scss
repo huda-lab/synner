@@ -1,0 +1,52 @@
+.generator-switch {
+  position: relative;
+  height: 100%;
+  margin-left: 4.2em;
+  padding: $panels-padding;
+  border-left: 1px solid #ddd;
+  overflow: auto;
+
+  .new-case-button {
+    margin: 0 5px 10px 0;
+  }
+
+  > .panel {
+    > .panel-heading {
+      padding: 5px 7px;
+
+      .heading-label {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .case-action-button {
+        margin: 2px;
+        float: right;
+        padding-top: 3px;
+      }
+
+      .ace_editor { height: 2em; }
+
+      .case-condition-container {
+        display: inline-table;
+        position: relative;
+
+        .expression-editor {
+          border: 1px solid #ccc;
+          width: 300px;
+        }
+
+        .dropdown-autosuggestions {
+          opacity: 0;
+        }
+      }
+
+      .condition-error {
+        color: red;
+        display: inline-block;
+        margin-right: 4px;
+      }
+    }
+  }
+
+}

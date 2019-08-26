@@ -1,0 +1,47 @@
+<div class="generator-switch">
+
+    <button class="btn btn-default btn-xxs new-case-button" ng-show="field.dependencies.length > 0" ng-click="addNewCondition()" type="button">Add New Case</button>
+
+    <ul class="dropdown-menu dropdown-autosuggestions" style="display: block; opacity: 0">
+        <li ng-repeat="sugg in expressionSuggestions">
+            <a ng-click="addSuggestionToCurrentEditor(sugg + ' ')">{{sugg}}</a>
+        </li>
+    </ul>
+
+    <div class="panel panel-default" ng-repeat="c in cases">
+        <div class="panel-heading">
+            <div class="heading-label">Case</div>
+            <div class="case-condition-container">
+                <div class="input-group">
+                    <div id="cases-condition-{{$index}}" class="expression-editor"
+                         ui-ace="{ onLoad : aceEditorLoaded, onChange : aceEditorOnChange, onFocus: aceEditorOnFocus, onBlur: aceEditorOnBlur}"
+                         ng-model="c.condition"></div>
+                </div>
+            </div>
+            <div class="condition-error" ng-if="c.error">{{c.error}}</div>
+            <i class="case-action-button fa fa-trash" ng-click="deleteCase(c)">
+            </i>
+            <!--<i class="case-action-button"-->
+               <!--ng-class="{true: 'fa fa-expand', false: 'fa fa-compress'}[compactViewDefaultCase]"-->
+               <!--ng-click="c.compactView = !c.compactView" style="float:right">-->
+            <!--</i>-->
+        </div>
+        <div class="panel-body">
+            <generator result="c._generator" field="field" compact-view="c.compactView"></generator>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading" ng-show="field.dependencies.length > 0">
+            Default Case
+            <!--<i class="compact-view-button"-->
+               <!--ng-class="{true: 'fa fa-expand', false: 'fa fa-compress'}[compactViewDefaultCase]"-->
+               <!--ng-click="compactViewDefaultCase = !compactViewDefaultCase" style="float:right">-->
+            <!--</i>-->
+        </div>
+        <div class="panel-body">
+            <generator result="_defaultCase" field="field" compact-view="compactViewDefaultCase"></generator>
+        </div>
+    </div>
+
+</div>

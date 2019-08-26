@@ -1,0 +1,25 @@
+<div class="generator-distribution-custom">
+    <table>
+        <tr>
+            <td class="axisv" ng-show="!compactView" ng-hide="compactView">
+                <div class="max-value">{{maxY | number : 2}}</div>
+                <div class="min-value">0</div>
+            </td>
+            <td class="td-canvas" ng-show="!compactView" ng-hide="compactView">
+                <canvas resize></canvas>
+                <a ng-click="cleanSketch()" class="btn clean-btn btn-default"><i class="fa fa-eraser" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td ng-class="{true:'axish-compact',false:'axish'}[compactView]">
+                <label ng-show="compactView" ng-hide="!compactView">min</label>
+                <input type="number" class="min-value" ng-model="distParameters.min">
+                <label ng-show="compactView" ng-hide="!compactView">max</label>
+                <input type="number" class="max-value" ng-model="distParameters.max">
+                <!--<div class="min-value">{{distParameters.min}}</div>-->
+                <!--<div class="max-value">{{distParameters.max}}</div>-->
+            </td>
+        </tr>
+    </table>
+</div>

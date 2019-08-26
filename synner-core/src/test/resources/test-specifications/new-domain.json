@@ -1,0 +1,19 @@
+{
+  "model": {
+    "name": {
+      "type": "string",
+      "generator": {
+        "domain": {
+          "name": "NAME",
+          "subcategory-name": "GENDER",
+          "subcategory-value": "F"
+        }
+      }
+    }
+  },
+  "data": {
+    "to-add": 10,
+    "tuples": [
+    ]
+  }
+}

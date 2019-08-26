@@ -1,0 +1,65 @@
+.infer-panel {
+
+  > table {
+    margin-top: $panels-margin/2;
+
+    td {
+      vertical-align: top;
+    }
+  }
+
+  .infer-panel-label {
+    font-size: 120%;
+    color: gray;
+    padding-left: $panels-margin;
+  }
+
+  .infer-default-panel-sep {
+    background-color: #ddd;
+    width: 1px;
+  }
+
+  .infer-suggestion-panel {
+    float: left;
+    margin: $panels-margin $panels-margin/2 $panels-margin $panels-margin/2;
+
+    .panel-heading {
+      text-align: left;
+      padding: 5px 7px;
+    }
+
+    .panel-body {
+      height: 180px;
+      width: 150px;
+    }
+
+    .panel-footer {
+      text-align: right;
+
+      .btn {
+        padding: 2px 15px 2px 15px;
+      }
+    }
+
+    .example {
+      margin: 0 0 5px;
+    }
+
+    .function {
+      text-align: center;
+    }
+
+  }
+
+  .infer-suggestion-panel-default {
+    margin-right: $panels-margin;
+  }
+
+  .infer-suggestion-panel-option {
+    margin-left: $panels-margin;
+  }
+
+  .infer-suggestion-panel-option-container {
+  }
+
+}

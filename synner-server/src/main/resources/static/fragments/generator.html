@@ -1,0 +1,87 @@
+<div class="generator" ng-class="{'generator-compact-view': compactView}">
+    <table class="generator-layout-table">
+        <tr>
+            <td class="generator-modalities-td">
+                <div class="generator-modalities form">
+                    <div class="form-group">
+                        <label>Describe by:&nbsp;</label>
+                        <div class="list-group" ng-if="!compactView">
+                            <a ref="#" ng-repeat="m in modalities" ng-click="changeMod(m.v)"
+                               ng-class="{'active': modality == m.v}"
+                               class="list-group-item list-group-item-action">{{m.descr}}</a>
+                        </div>
+                        <div class="select-container">
+                            <select ng-model="modality" ng-if="compactView">
+                                <option ng-repeat="m in modalities" value="{{m.v}}">{{m.descr}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td class="generator-content-td">
+                <div class="generator-content" ng-switch="field.type">
+
+                    <div ng-switch-when="string">
+                        <div ng-switch="modality">
+                            <generator-function ng-switch-when="function" result="_result" field="field"
+                                                compact-view="compactView"></generator-function>
+                            <generator-domain ng-switch-when="domain" result="_result" field="field"
+                                              compact-view="compactView"></generator-domain>
+                            <generator-string-enum ng-switch-default result="_result" field="field"
+                                                   compact-view="compactView"></generator-string-enum>
+                        </div>
+                    </div>
+
+                    <div ng-switch-when="integer">
+                        <div ng-switch="modality">
+                            <generator-function ng-switch-when="function" result="_result" field="field"
+                                                compact-view="compactView"></generator-function>
+                            <generator-number-enum ng-switch-when="enumeration" result="_result" field="field"
+                                                   compact-view="compactView"></generator-number-enum>
+                            <generator-distribution-main ng-switch-default result="_result" field="field"
+                                                         compact-view="compactView"></generator-distribution-main>
+                            <generator-visrel ng-switch-when="visrel" result="_result" field="field"
+                                                   compact-view="compactView"></generator-visrel>
+                        </div>
+                    </div>
+
+                    <div ng-switch-when="decimal">
+                        <div ng-switch="modality">
+                            <generator-function ng-switch-when="function" result="_result" field="field"
+                                                compact-view="compactView"></generator-function>
+                            <generator-number-enum ng-switch-when="enumeration" result="_result" field="field"
+                                                   compact-view="compactView"></generator-number-enum>
+                            <generator-distribution-main ng-switch-default result="_result" field="field"
+                                                         compact-view="false"
+                                                         compact-view="compactView"></generator-distribution-main>
+                            <generator-visrel ng-switch-when="visrel" result="_result" field="field"
+                                              compact-view="compactView"></generator-visrel>
+                        </div>
+                    </div>
+
+                    <div ng-switch-when="time">
+                        <div ng-switch="modality">
+                            <generator-function ng-switch-when="function" result="_result" field="field"
+                                                compact-view="compactView"></generator-function>
+                            <generator-timerange ng-switch-when="timerange" result="_result" field="field"
+                                              compact-view="compactView"></generator-timerange>
+                        </div>
+                    </div>
+
+                    <div ng-switch-when="date">
+                        <div ng-switch="modality">
+                            <generator-function ng-switch-when="function" result="_result" field="field"
+                                                compact-view="compactView"></generator-function>
+                            <generator-daterange ng-switch-when="daterange" result="_result" field="field"
+                                                 compact-view="compactView"></generator-daterange>
+                        </div>
+                    </div>
+
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <!--<div class="panel-body" style="color: gray;">generator: {{_result.obj || ''}}</div>-->
+    <!--<div class="panel-body" style="color: gray;">modality: {{modality || ''}}</div>-->
+</div>

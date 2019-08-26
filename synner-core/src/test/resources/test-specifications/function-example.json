@@ -1,0 +1,32 @@
+{
+  "model": {
+    "Name": {
+      "pos": 0,
+      "type": "string",
+      "dependencies": [],
+      "generator": {
+        "switch": [
+          {
+            "default": {
+              "function": [
+                {
+                  "expression": "'A'",
+                  "freq": 1
+                },
+                {
+                  "expression": "'B'",
+                  "freq": 1
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "data": {
+    "to-add": 10,
+    "tuples": []
+  },
+  "format": "json"
+}

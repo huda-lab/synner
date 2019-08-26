@@ -1,0 +1,9 @@
+<div id="main-properties-panel" ng-style="{'height': mainPropertiesPanelHeight}">
+    <h3 class="main-panel-title">
+        {{_selectedField.obj.name}}
+    </h3>
+    <generator-switch ng-if="_selectedField.obj._generator.obj"
+                      result="_selectedField.obj._generator" field="_selectedField.obj">
+    </generator-switch>
+    <infer-panel ng-if="!_selectedField.obj._generator.obj" field="_selectedField.obj"></infer-panel>
+</div>

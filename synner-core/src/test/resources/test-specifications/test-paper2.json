@@ -1,0 +1,47 @@
+{ "model": {
+    "sex": {
+      "type": "string",
+      "generator": {
+        "cases": [
+          {"value": "M"},
+          {"value": "F"}
+        ],
+        "ratios": [48, 52]
+      }
+    },
+    "age": {
+      "type": "integer",
+      "generator": {
+        "distribution": "uniform",
+        "min": 30, "max": 40
+      }
+    },
+    "height": {
+      "dependencies": ["sex"],
+      "type": "integer",
+      "generator": {
+        "switch": [
+          {
+            "case": "sex == 'F'",
+            "then": {
+              "distribution": "gaussian",
+              "mean": 161, "stdev": 10
+            }
+          },
+          {
+            "case": "sex == 'M'",
+            "then": {
+              "distribution": "gaussian",
+              "mean": 176, "stdev": 10
+            }
+          }
+        ]
+      }
+    }
+  },
+  "data": {
+    "to-add": 10,
+    "tuples": [
+    ]
+  }
+}

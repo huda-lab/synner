@@ -1,0 +1,172 @@
+.generator-function {
+
+  $case-height: 29px;
+  $case-height-padding: 6px;
+
+  > table {
+    width: 100%;
+
+    th {
+      padding-bottom: 5px;
+
+      &.cases-header-ratio {
+        text-align: center;
+      }
+
+      &.cases-header-freqpb {
+        text-align: left;
+      }
+    }
+
+    tr.case-row {
+      height: $input-height + $case-height-padding;
+
+      .case-value {
+        .input-group {
+          width: 100%;
+        }
+        .form-control {
+          height: $input-height;
+          width: 100% !important;
+        }
+        .void-input {
+          border: none;
+          box-shadow: none;
+
+          &:focus {
+            outline: none;
+          }
+        }
+        .input-group-btn {
+          width: 1% !important;
+        }
+      }
+
+      .case-hist-filler > div {
+        padding: 0;
+        margin: 0;
+        border-top: 1px solid rgb(204, 204, 204);
+        height: 1px;
+      }
+
+      .case-ratio {
+        width: 50px;
+        vertical-align: middle;
+        display: inline-block;
+        text-align: center;
+
+        input {
+          width: 4rem;
+          text-align: center;
+          border: 1px solid #ddd;
+        }
+      }
+
+      .case-freqpb {
+        text-align: left;
+
+        .progress {
+          border: none;
+          display: inline-block;
+          width: 150px;
+          height: $case-height + $case-height-padding - 1;
+          margin: 0 50px 0 0;
+          padding: 0;
+          overflow: visible;
+          vertical-align: middle;
+          position: relative;
+          background: inherit;
+
+          .progress-bar {
+            background-color: rgba(70, 130, 180, 0.5); //steelblue 50% op
+            box-shadow: none;
+          }
+
+          &.pg-hover {
+            .ratio-value {
+              display: none;
+            }
+            .freq-btn-decrease, .freq-btn-increase {
+              display: block;
+            }
+
+          }
+
+          .ratio-value {
+            display: block;
+            position: absolute;
+            top: 9px;
+            width: 50px;
+            text-align: left;
+            padding: 2px;
+            @include transition(left .6s ease);
+          }
+
+          .freq-btn-decrease, .freq-btn-increase {
+            display: none;
+            position: absolute;
+            top: 0;
+            width: 20px;
+            height: $case-height + $case-height-padding - 1;
+            padding: 10px 0 0 0;
+            width: 20px;
+            text-align: center;
+            padding: 10px 0 0 0;
+            @include transition(left .6s ease);
+            @include transition(background-color .2s ease);
+
+            &:hover {
+              background-color: #EBEBEB;
+              cursor: pointer;
+            }
+
+          }
+
+          .freq-btn-decrease {
+            margin-left: -20px;
+          }
+
+        }
+
+      }
+
+    }
+  }
+
+  .function-expression {
+    label {
+      display: block;
+    }
+    //input {
+    //  font-size: 150%;
+    //  height: 1.8em;
+    //  width: 400px !important;
+    //}
+  }
+
+  .function-expression-errors {
+    display: block;
+    color: #ff5a49;
+  }
+
+  .function-expression-suggestions {
+    margin-top: 20px;
+
+    table td {
+      padding: 5px;
+
+      code {
+        cursor: pointer;
+      }
+    }
+
+    .suggestion {
+      margin: 5px;
+    }
+  }
+
+  .used-field {
+    margin-right: 0.4em;
+  }
+
+}

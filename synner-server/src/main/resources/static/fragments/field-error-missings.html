@@ -1,0 +1,16 @@
+<div class="field-error-missings" ng-show="field.editingMissingError">
+    <div>
+        <span class="input-label">Errors: </span>
+        <input class="field-errors-number" id="field-errors" type="range" min="0" max="100" ng-model="fieldErrors">
+        <span class="input-label"> {{fieldErrors}}%</span>
+    </div>
+    <div>
+        <span class="input-label">Missing: </span>
+        <input class="field-missings-number" type="range" min="0" max="100" ng-model="fieldMissings">
+        <span class="input-label"> {{fieldMissings}}%</span>
+    </div>
+    <div class="confirm-dialog">
+        <i class="fa fa-check" ng-click="approveChanges()"></i>
+        <i class="fa fa-times" ng-click="discargeChanges()"></i>
+    </div>
+</div>

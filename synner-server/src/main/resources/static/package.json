@@ -1,0 +1,11 @@
+{
+  "name": "synner",
+  "version": "1.0.0",
+  "scripts": {
+    "live-server": "live-server . --port=8041 --host=localhost --ignorePattern=\".*\\.scss\" --verbose"
+  },
+  "author": "Miro Mannino",
+  "dependencies": {
+    "live-server": "^1.2.0"
+  }
+}

@@ -1,0 +1,36 @@
+
+// Global variables that will be visible among all files.
+// Even if bootstrap variables are imported, changing them will have no effects on bootstrap rules (change vendor.scss instead)
+@import "../vendor/bootstrap-sass-official/assets/stylesheets/bootstrap/variables";
+@import "../vendor/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins";
+$max-property-panel-height: 350px;
+$data-table-height: 200px;
+$input-height: 29px;
+$panels-padding: 10px;
+$panels-margin: 10px;
+$scrollbar-width: 4px;
+$scrollbar-height: 5px;
+$scrollbar-track-piece: #dadada;
+$scrollbar-thumb: #aaa;
+$table-column-width: 270px;
+$last-column-width: 10px;
+$table-scrollbar-width: 4px;
+
+@import "global";
+@import "main-properties-panel";
+@import "generator";
+@import "table";
+@import "generator-distribution";
+@import "generator-enum";
+@import "visual-summary";
+@import "field-filter";
+@import "field-error-missings";
+@import "generator-switch";
+@import "generator-domain";
+@import "generator-function";
+@import "generator-visrel";
+@import "generator-timerange";
+@import "generator-daterange";
+@import "dependencies-list";
+@import "infer-panel";
+@import "navbar";

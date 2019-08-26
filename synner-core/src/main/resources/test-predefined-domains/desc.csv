@@ -1,0 +1,10 @@
+domain,rname,description
+"GENDER","Gender",""
+"NAME","Name",""
+"SURNAME","Surname",""
+"NATIONALITY","Nationality",""
+"CITY","City",""
+"CONTINENT","Continent",""
+"COUNTRY","Country",""
+"PROVINCE","Province/State",""
+"REGION","Region","Region as north,east,south,west"

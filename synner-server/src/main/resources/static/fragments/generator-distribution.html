@@ -1,0 +1,35 @@
+<table class="generator-distribution">
+    <tr>
+        <td class="distribution-plot-container" ng-show="!compactView" ng-hide="compactView">
+            <svg class="distribution-plot"></svg>
+        </td>
+        <td class="distribution-property-container">
+            <!--<div>The graph shows the outcome of {{experimentsNumber}} experiments where {{dataVolume}} data-point has been generated.</div>-->
+            <div class="distribution-property" ng-show="distribution == 'gaussian'">
+                <label for="distpar_mean" class="control-label" ng-visible="graphVisibility">mean: </label>
+                <input type="number" name="distpar_mean" id="distpar_mean" ng-visible="graphVisibility" class="form-control form-control-inline" ng-model="distParameters.mean">
+                <div class="mean-closeup" ng-visible="graphVisibility" ng-show="!compactView" ng-hide="compactView"><svg></svg></div>
+            </div>
+            <div class="distribution-property" ng-show="distribution == 'gaussian'">
+                <label for="distpar_stdev" class="control-label" ng-visible="graphVisibility">stdev: </label>
+                <input type="number" min="0.0001" name="distpar_stdev" ng-visible="graphVisibility" id="distpar_stdev" class="form-control form-control-inline" ng-model="distParameters.stdev">
+                <div class="stdev-closeup" ng-visible="graphVisibility" ng-show="!compactView" ng-hide="compactView"><svg></svg></div>
+            </div>
+            <div class="distribution-property" ng-show="distribution == 'uniform' || distribution == 'custom'">
+                <label for="distpar_min" class="control-label" ng-visible="graphVisibility">min: </label>
+                <input type="number" name="distpar_min" id="distpar_min" class="form-control form-control-inline" ng-model="distParameters.min">
+                <div class="min-closeup" ng-visible="graphVisibility" ng-show="!compactView" ng-hide="compactView"><svg></svg></div>
+            </div>
+            <div class="distribution-property" ng-show="distribution == 'uniform' || distribution == 'custom'">
+                <label for="distpar_max" class="control-label" ng-visible="graphVisibility">max: </label>
+                <input type="number" name="distpar_max" id="distpar_max" class="form-control form-control-inline" ng-model="distParameters.max">
+                <div class="max-closeup" ng-visible="graphVisibility" ng-show="!compactView" ng-hide="compactView"><svg></svg></div>
+            </div>
+            <div class="distribution-property" ng-show="distribution == 'exponential'">
+                <label for="distpar_rate" class="control-label">rate: </label>
+                <input type="number" name="distpar_rate" id="distpar_rate" class="form-control form-control-inline" ng-model="distParameters.rate">
+                <div class="rate-closeup" ng-visible="graphVisibility" ng-show="!compactView" ng-hide="compactView"><svg></svg></div>
+            </div>
+        </td>
+    </tr>
+</table>

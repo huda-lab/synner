@@ -1,0 +1,73 @@
+<div class="generator-function">
+    <table>
+        <tr>
+            <th class="cases-header">Expressions</th>
+            <th colspan="3" class="cases-hist-filler-header"></th>
+            <th class="cases-header cases-header-freqpb" ng-show="cases.length > 2">Distribution</th>
+        </tr>
+        <tr class="case-row" ng-repeat="case in cases">
+            <td class="case-value">
+                <div class="input-group">
+                    <input type="text" class="form-control function-inputbox" ng-model="case.expression"
+                           ng-focus="selectInput(case, $event)"
+                           ng-class="{'void-input': (case.expression == null || case.expression.length == 0) && $index > 0}" placeholder="new expression">
+                </div>
+            </td>
+            <td ng-show="cases.length > 2 && case.expression.length > 0">
+                <div class="case-hist-filler">&nbsp;&nbsp;&nbsp;</div>
+            </td>
+            <td class="case-perc-value" ng-show="cases.length > 2 && case.expression.length > 0">
+                <input type="number" min="1" max="100" ng-maxlength="2" ng-model="case.freq" class="ghost-editable freq-value">
+            </td>
+            <td ng-show="cases.length > 2 && case.expression.length > 0">
+                <div class="case-hist-filler">&nbsp;&nbsp;&nbsp;</div>
+            </td>
+            <td class="case-freqpb" ng-show="cases.length > 2 && case.expression.length > 0">
+                <div class="progress" ng-show="case.expression.length > 0"
+                     ng-mouseenter="pghover = true"
+                     ng-mouseleave="pghover = false"
+                     ng-class="{'pg-hover' : pghover}">
+
+                    <div class="progress-bar"
+                         role="progressbar"
+                         ng-style="{width: ((case.freq / freqSum * 100) + '%')}">
+                    </div>
+                    <div class="simexperiments-container">
+                        <div class="simres" ng-repeat="sim in case.simulations" ng-style="{left: (sim.initPerc * 100) + '%', width: (sim.width * 100) + '%'}"></div>
+                    </div>
+                    <div class="freq-btn-increase"
+                         ng-style="{left: ((case.freq / freqSum * 100) + '%')}"
+                         ng-click="increaseFreq(case)">&gt;
+                    </div>
+                    <div class="freq-btn-decrease"
+                         ng-hide="case.freq <= 0"
+                         ng-style="{left: ((case.freq / freqSum * 100) + '%')}"
+                         ng-click="decreaseFreq(case)">&lt;
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <div class="function-expression-errors" ng-if="expressionError">
+        {{expressionError}}
+    </div>
+    <div class="function-expression-suggestions">
+        <div style="margin-bottom: 5px">Use in expression:</div>
+        <table>
+            <tr>
+                <td>Generate a number from 0 to 1 uniformly at random: <code ng-click="add('uniform(0,1)')">uniform(0, 1)</code></td>
+            </tr>
+            <tr>
+                <td>Generate a number from the standard normal distribution with mean 0 and standard deviation 1: <code ng-click="add('normal(0,1)')">normal(0, 1)</code></td>
+            </tr>
+            <tr>
+                <td>Generate values from a domain such as <code ng-click="add('domain(\'City\')')">domain('city')</code></td>
+            </tr>
+            <tr>
+                <td>Round function <code ng-click="add('Math.round()')">Math.round()</code></td>
+            </tr>
+        </table>
+    </div>
+
+</div>

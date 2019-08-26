@@ -1,0 +1,101 @@
+<div class="generator-visrel">
+    <table>
+        <tr>
+            <td colspan="3" class="control-buttons">
+                <div style="display: inline-block;">
+                    <span>Use a trend </span>
+                    <a class="btn btn-default btn-xxs draw-trend-btn" ng-click="drawSketch('linear')">
+                        <svg width="10px" height="10px" viewBox="0 0 100 100" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+                            <g transform="matrix(1.41701,0,0,1.41701,-22.7255,-18.0372)">
+                                <path d="M19.088,80.25L83.862,15.476" style="fill:none;stroke:black;stroke-width:4.23px;"/>
+                            </g>
+                        </svg>
+                    </a>
+                    <a class="btn btn-default btn-xxs draw-trend-btn" ng-click="drawSketch('log')">
+                        <svg width="10px" height="10px" viewBox="0 0 100 100" version="1.1" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+                            <g transform="matrix(1.41701,0,0,1.41701,-22.7255,-18.0372)">
+                                <path d="M19.088,80.25C19.088,80.25 18.382,44.596 42.464,29.8C60.851,18.502 83.862,15.476 83.862,15.476" style="fill:none;stroke:black;stroke-width:4.23px;"/>
+                            </g>
+                        </svg>
+                    </a>
+                    <a class="btn btn-default btn-xxs draw-trend-btn" ng-click="drawSketch('exp')">
+                        <svg width="10px" height="10px" viewBox="0 0 100 100" version="1.1" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+                            <g transform="matrix(1.41701,0,0,1.41701,-22.7255,-18.0372)">
+                                <path d="M19.088,80.25C19.088,80.25 42.342,77.565 62.419,59.474C80.797,42.913 83.862,15.476 83.862,15.476" style="fill:none;stroke:black;stroke-width:4.23px;"/>
+                            </g>
+                        </svg>
+                    </a>
+                    <span> or draw the relationship on the canvas below</span>
+                </div>
+                <div class="pull-right" style="display: inline-block">
+                    <a class="btn btn-default btn-xxs draw-trend-btn" ng-click="clean()">Clear</a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="axisv">
+                <div class="target-max">
+                    <div class="graph-tick-line"></div>
+                    <input type="number" ng-model="targetMax">
+                </div>
+                <div>{{field.name}}</div>
+                <div class="target-min">
+                    <div class="graph-tick-line"></div>
+                    <input type="number" ng-model="targetMin">
+                </div>
+            </td>
+            <td>
+                <div class="visrel-canvas-simplot-container">
+                    <svg class="visrel-simplot"></svg>
+                    <canvas class="visrel-canvas"></canvas>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="axish">
+                <div class="source-min">
+                    <div class="graph-tick-line"></div>
+                    <input type="number" ng-model="sourceMin">
+                </div>
+                <div>{{selectedInputField.name}}</div>
+                <div class="source-max">
+                    <div class="graph-tick-line"></div>
+                    <input type="number" ng-model="sourceMax">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;
+            </td>
+            <td colspan="2">
+                <table class="slider-table">
+                    <tr>
+                        <td><br/> 1 standard deviation of <br/> Gaussian noise for {{field.name}}:</td>
+                        <td style="text-align: center">
+                            <div>
+                                {{noisePercToDataRangeNoise(noiseToNoisePerc(noises)) | number: 2}}
+                            </div>
+                            <rzslider rz-slider-model="noises"
+                                      rz-slider-options="{floor: 0, ceil: 200, step: 1, precision: 1, showTicks: false, showTicksValues: false}">
+                            </rzslider>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td style="text-align: center">
+                            <div class="min-slider-tick">0</div>
+                            <div class="max-slider-tick">{{2 * (targetMax - targetMin) | number: 2}}</div>
+                        </td>
+                    </tr>
+                </table>
+
+                <!--&nbsp;-->
+                <!--<div>-->
+                <!--<a class="btn btn-default btn-xs" ng-click="clean()">Clean</a>-->
+                <!--</div>-->
+            </td>
+        </tr>
+    </table>
+</div>

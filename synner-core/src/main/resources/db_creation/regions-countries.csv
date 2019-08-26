@@ -1,0 +1,234 @@
+region,country
+Northern Africa,Algeria
+Northern Africa,Egypt
+Northern Africa,Libya
+Northern Africa,Morocco
+Northern Africa,Sudan
+Northern Africa,Tunisia
+Northern Africa,Western Sahara
+Sub-Saharan Africa,Burundi
+Sub-Saharan Africa,Comoros
+Sub-Saharan Africa,Djibouti
+Sub-Saharan Africa,Eritrea
+Sub-Saharan Africa,Ethiopia
+Sub-Saharan Africa,French Southern Territories
+Sub-Saharan Africa,Kenya
+Sub-Saharan Africa,Madagascar
+Sub-Saharan Africa,Malawi
+Sub-Saharan Africa,Mauritius
+Sub-Saharan Africa,Mayotte
+Sub-Saharan Africa,Mozambique
+Sub-Saharan Africa,Reunion
+Sub-Saharan Africa,Rwanda
+Sub-Saharan Africa,Seychelles
+Sub-Saharan Africa,Somalia
+Sub-Saharan Africa,South Sudan
+Sub-Saharan Africa,Uganda
+Sub-Saharan Africa,Tanzania
+Sub-Saharan Africa,Zambia
+Sub-Saharan Africa,Zimbabwe
+Sub-Saharan Africa,Angola
+Sub-Saharan Africa,Cameroon
+Sub-Saharan Africa,Central African Republic
+Sub-Saharan Africa,Chad
+Sub-Saharan Africa,Equatorial Guinea
+Sub-Saharan Africa,Gabon
+Sub-Saharan Africa,Sao Tome and Principe
+Sub-Saharan Africa,Botswana
+Sub-Saharan Africa,Swaziland
+Sub-Saharan Africa,Lesotho
+Sub-Saharan Africa,Namibia
+Sub-Saharan Africa,South Africa
+Sub-Saharan Africa,Benin
+Sub-Saharan Africa,Burkina Faso
+Sub-Saharan Africa,Cape Verde
+Sub-Saharan Africa,Ivory Coast
+Sub-Saharan Africa,Gambia
+Sub-Saharan Africa,Ghana
+Sub-Saharan Africa,Guinea
+Sub-Saharan Africa,Guinea-Bissau
+Sub-Saharan Africa,Liberia
+Sub-Saharan Africa,Mali
+Sub-Saharan Africa,Mauritania
+Sub-Saharan Africa,Niger
+Sub-Saharan Africa,Nigeria
+Sub-Saharan Africa,Saint Helena
+Sub-Saharan Africa,Senegal
+Sub-Saharan Africa,Sierra Leone
+Sub-Saharan Africa,Togo
+Latin America and the Caribbean,Anguilla
+Latin America and the Caribbean,Antigua and Barbuda
+Latin America and the Caribbean,Aruba
+Latin America and the Caribbean,Bahamas
+Latin America and the Caribbean,Barbados
+Latin America and the Caribbean,Bonaire
+Latin America and the Caribbean,British Virgin Islands
+Latin America and the Caribbean,Cayman Islands
+Latin America and the Caribbean,Cuba
+Latin America and the Caribbean,Curacao
+Latin America and the Caribbean,Dominica
+Latin America and the Caribbean,Dominican Republic
+Latin America and the Caribbean,Grenada
+Latin America and the Caribbean,Guadeloupe
+Latin America and the Caribbean,Haiti
+Latin America and the Caribbean,Jamaica
+Latin America and the Caribbean,Martinique
+Latin America and the Caribbean,Montserrat
+Latin America and the Caribbean,Puerto Rico
+Latin America and the Caribbean,Saint Barthelemy
+Latin America and the Caribbean,Saint Kitts and Nevis
+Latin America and the Caribbean,Saint Lucia
+Latin America and the Caribbean,Saint Martin
+Latin America and the Caribbean,Saint Vincent and the Grenadines
+Latin America and the Caribbean,Sint Maarten
+Latin America and the Caribbean,Trinidad and Tobago
+Latin America and the Caribbean,Turks and Caicos Islands
+Latin America and the Caribbean,U.S. Virgin Islands
+Latin America and the Caribbean,Belize
+Latin America and the Caribbean,Costa Rica
+Latin America and the Caribbean,El Salvador
+Latin America and the Caribbean,Guatemala
+Latin America and the Caribbean,Honduras
+Latin America and the Caribbean,Mexico
+Latin America and the Caribbean,Nicaragua
+Latin America and the Caribbean,Panama
+Latin America and the Caribbean,Argentina
+Latin America and the Caribbean,Bolivia
+Latin America and the Caribbean,Brazil
+Latin America and the Caribbean,Chile
+Latin America and the Caribbean,Colombia
+Latin America and the Caribbean,Ecuador
+Latin America and the Caribbean,Falkland Islands
+Latin America and the Caribbean,French Guiana
+Latin America and the Caribbean,Guyana
+Latin America and the Caribbean,Paraguay
+Latin America and the Caribbean,Peru
+Latin America and the Caribbean,South Georgia and the South Sandwich Islands
+Latin America and the Caribbean,Suriname
+Latin America and the Caribbean,Uruguay
+Latin America and the Caribbean,Venezuela
+Northern America,Bermuda
+Northern America,Canada
+Northern America,Greenland
+Northern America,Saint Pierre and Miquelon
+Northern America,United States
+Central Asia,Kazakhstan
+Central Asia,Kyrgyzstan
+Central Asia,Tajikistan
+Central Asia,Turkmenistan
+Central Asia,Uzbekistan
+Eastern Asia,China
+Eastern Asia,North Korea
+Eastern Asia,Japan
+Eastern Asia,Mongolia
+Eastern Asia,South Korea
+South-eastern Asia,Brunei
+South-eastern Asia,Cambodia
+South-eastern Asia,Indonesia
+South-eastern Asia,Laos
+South-eastern Asia,Malaysia
+South-eastern Asia,Myanmar
+South-eastern Asia,Philippines
+South-eastern Asia,Singapore
+South-eastern Asia,Thailand
+South-eastern Asia,East Timor
+South-eastern Asia,Vietnam
+Southern Asia,Afghanistan
+Southern Asia,Bangladesh
+Southern Asia,Bhutan
+Southern Asia,India
+Southern Asia,Iran
+Southern Asia,Maldives
+Southern Asia,Nepal
+Southern Asia,Pakistan
+Southern Asia,Sri Lanka
+Western Asia,Armenia
+Western Asia,Azerbaijan
+Western Asia,Bahrain
+Western Asia,Cyprus
+Western Asia,Georgia
+Western Asia,Iraq
+Western Asia,Israel
+Western Asia,Jordan
+Western Asia,Kuwait
+Western Asia,Lebanon
+Western Asia,Oman
+Western Asia,Qatar
+Western Asia,Saudi Arabia
+Western Asia,Syria
+Western Asia,Turkey
+Western Asia,United Arab Emirates
+Western Asia,Yemen
+Eastern Europe,Belarus
+Eastern Europe,Bulgaria
+Eastern Europe,Czech Republic
+Eastern Europe,Hungary
+Eastern Europe,Poland
+Eastern Europe,Moldova
+Eastern Europe,Romania
+Eastern Europe,Russia
+Eastern Europe,Slovakia
+Eastern Europe,Ukraine
+Northern Europe,Aland Islands
+Northern Europe,Jersey
+Northern Europe,Denmark
+Northern Europe,Estonia
+Northern Europe,Faroe Islands
+Northern Europe,Finland
+Northern Europe,Iceland
+Northern Europe,Ireland
+Northern Europe,Isle of Man
+Northern Europe,Latvia
+Northern Europe,Lithuania
+Northern Europe,Norway
+Northern Europe,Sweden
+Northern Europe,United Kingdom
+Southern Europe,Albania
+Southern Europe,Andorra
+Southern Europe,Bosnia and Herzegovina
+Southern Europe,Croatia
+Southern Europe,Greece
+Southern Europe,Italy
+Southern Europe,Malta
+Southern Europe,Montenegro
+Southern Europe,Portugal
+Southern Europe,San Marino
+Southern Europe,Serbia
+Southern Europe,Slovenia
+Southern Europe,Spain
+Southern Europe,Macedonia
+Western Europe,Austria
+Western Europe,Belgium
+Western Europe,France
+Western Europe,Germany
+Western Europe,Liechtenstein
+Western Europe,Luxembourg
+Western Europe,Monaco
+Western Europe,Netherlands
+Western Europe,Switzerland
+Australia and New Zealand,Australia
+Australia and New Zealand,Christmas Island
+Australia and New Zealand,Cocos Islands
+Australia and New Zealand,New Zealand
+Australia and New Zealand,Norfolk Island
+Melanesia,Fiji
+Melanesia,New Caledonia
+Melanesia,Papua New Guinea
+Melanesia,Solomon Islands
+Melanesia,Vanuatu
+Micronesia,Guam
+Micronesia,Kiribati
+Micronesia,Marshall Islands
+Micronesia,Micronesia
+Micronesia,Nauru
+Micronesia,Northern Mariana Islands
+Micronesia,Palau
+Polynesia,American Samoa
+Polynesia,Cook Islands
+Polynesia,French Polynesia
+Polynesia,Niue
+Polynesia,Pitcairn
+Polynesia,Samoa
+Polynesia,Tokelau
+Polynesia,Tonga
+Polynesia,Tuvalu

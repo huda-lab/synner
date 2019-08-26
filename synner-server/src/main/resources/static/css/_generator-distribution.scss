@@ -1,0 +1,394 @@
+.generator-distribution-main {
+  $plot-height: 250px;
+  $plot-width: $plot-height * 3;
+
+  .generator-distribution-main-layout-table {
+    width: 100%;
+
+    .distribution-container-td {
+      width: 100%;
+    }
+
+    > tbody > tr > td {
+      vertical-align: top;
+    }
+  }
+
+  .distribution-chooser {
+    float: left;
+    clear: left;
+    margin-right: $panels-padding;
+
+    &:focus {
+      outline: -webkit-focus-ring-color auto 0;
+    }
+  }
+
+  .generator-distribution {
+    $theoreticalColor: rgb(0, 133, 255);
+    $stdevColor: rgb(183, 183, 183);
+    $meanColor: rgb(255, 124, 126);
+    $rateColor: rgb(183, 183, 183);
+    $shapeColor: rgb(183, 183, 183);
+    $scaleColor: rgb(255, 124, 126);
+    $sampleStrokeWidth: 1.5px;
+    $sampleColor: rgb(0, 133, 255);
+    $highlightedSampleColor: $sampleColor;
+    $highlightedSampleHistogramColor: lighten(complement($sampleColor), 15%); //rgb(255, 230, 0);
+
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    width: 100%;
+    table-layout: fixed;
+    margin: auto;
+    font-size: 12px;
+
+    .theoretical-line {
+      stroke: $theoreticalColor;
+    }
+
+    .theoretical-area {
+      fill: $theoreticalColor;
+      fill-opacity: 0.1;
+    }
+
+    .highlighted-histogram {
+      fill: $highlightedSampleHistogramColor;
+      fill-opacity: 0.7;
+    }
+
+    .min-max-area {
+      fill: $theoreticalColor;
+      fill-opacity: 0.4;
+    }
+
+    .theoretical-stdev {
+      stroke-linecap: round;
+      stroke-width: 3px;
+      fill: $stdevColor;
+      stroke: $stdevColor;
+    }
+
+    .theoretical-mean {
+      stroke-width: 3px;
+      fill: $meanColor;
+      stroke: $meanColor;
+      stroke-linecap: round;
+    }
+
+    .theoretical-rate {
+      stroke-width: 3px;
+      fill: $rateColor;
+      stroke: $rateColor;
+      stroke-linecap: round;
+    }
+
+    .theoretical-min {
+      stroke-width: 3px;
+      fill: $rateColor;
+      stroke: $rateColor;
+      stroke-linecap: round;
+    }
+
+    .theoretical-max {
+      stroke-width: 3px;
+      fill: $rateColor;
+      stroke: $rateColor;
+      stroke-linecap: round;
+    }
+
+    .theoretical-shape {
+      stroke-width: 3px;
+      fill: $shapeColor;
+      stroke: $shapeColor;
+      stroke-linecap: round;
+    }
+
+    .theoretical-scale {
+      stroke-width: 3px;
+      fill: $scaleColor;
+      stroke: $scaleColor;
+      stroke-linecap: round;
+    }
+
+    .distribution-bin {
+      fill: rgba(173, 216, 230, 0.51);
+      stroke: none;
+    }
+
+    .sample {
+      stroke: $sampleColor;
+      stroke-opacity: 0.2;
+      stroke-width: $sampleStrokeWidth;
+      fill: none;
+
+      &.hidden-sample {
+        stroke-opacity: 0;
+        stroke-width: $sampleStrokeWidth * 2;
+      }
+
+      &.highlighted {
+        stroke-width: $sampleStrokeWidth;
+        stroke: $highlightedSampleColor;
+        stroke-dasharray: 2;
+        stroke-opacity: 0.7;
+      }
+    }
+
+    .specs {
+      font-size: 12px;
+      background: #ddd;
+      padding: 4px;
+      border-radius: 4px;
+      display: none;
+    }
+
+    .distribution-property {
+      padding: 10px 0 10px 0;
+      max-width: $plot-width / 2;
+      text-align: center;
+
+      .control-label {
+        font-size: 17px;
+        margin-bottom: 10px;
+      }
+      .mean-closeup, .stdev-closeup, .rate-closeup, .shape-closeup, .scale-closeup, .min-closeup, .max-closeup {
+        .ticks line {
+          fill: none;
+          stroke: black;
+        }
+        .domain {
+          fill: none;
+          stroke: black;
+        }
+        line.sample {
+          fill: none;
+          stroke-opacity: 1;
+          &.highlighted {
+            stroke-width: $sampleStrokeWidth * 2;
+            stroke: $highlightedSampleColor;
+          }
+        }
+        rect.sample {
+          stroke: none;
+        }
+      }
+      .stdev-closeup {
+        line.sample { stroke: $stdevColor; }
+        rect.sample {
+          fill: $stdevColor;
+          &.layered {
+            fill-opacity: 0.15;
+          }
+        }
+      }
+      .mean-closeup {
+        line.sample { stroke: $meanColor;}
+        rect.sample {
+          fill: $meanColor;
+          &.layered {
+            fill-opacity: 0.15;
+          }
+        }
+      }
+
+      .rate-closeup {
+        line.sample {stroke: $rateColor; }
+        rect.sample {
+          fill: $rateColor;
+          &.layered {
+            fill-opacity: 0.15;
+          }
+        }
+      }
+
+      .shape-closeup {
+        line.sample {stroke: $shapeColor; }
+        rect.sample {
+          fill: $shapeColor;
+          &.layered {
+            fill-opacity: 0.15;
+          }
+        }
+      }
+
+      .scale-closeup {
+        line.sample {stroke: $scaleColor; }
+        rect.sample {
+          fill: $scaleColor;
+          &.layered {
+            fill-opacity: 0.15;
+          }
+        }
+      }
+
+      .min-closeup, .max-closeup {
+        line.sample { stroke: $shapeColor; }
+        rect.sample { fill: $shapeColor;
+          &.layered { fill-opacity: 0.15; }
+        }
+      }
+
+      input {
+        width: 50px;
+        padding: 2px;
+        text-align: center;
+        margin: auto;
+        &:focus {
+          outline: none;
+        }
+      }
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        /* display: none; <- Crashes Chrome on hover */
+        -webkit-appearance: none;
+        margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+      }
+
+    }
+
+    .distribution-plot-container {
+      vertical-align: top;
+      text-align: center;
+      width: $plot-width + $panels-padding;
+
+      svg {
+        height: $plot-height;
+        width: $plot-width;
+
+        .axis path,
+        .axis line {
+          fill: none;
+          stroke: #000;
+          shape-rendering: crispEdges;
+        }
+        .line {
+          fill: none;
+          stroke-width: 1px;
+        }
+      }
+
+    }
+  }
+
+  .generator-distribution-custom {
+    margin-left: $panels-padding * 3;
+
+    table {
+      max-width: $plot-width;
+
+      td {
+        position: relative;
+      }
+
+      .td-canvas {
+        padding: 11px 11px 0 4px;
+      }
+    }
+
+    canvas {
+      height: $plot-height - 30px;
+      width: $plot-width;
+    }
+
+    .control-buttons {
+      vertical-align: bottom;
+      padding: 20px;
+    }
+
+    .clean-btn {
+      position: absolute;
+      top: $panels-padding;
+      right: $panels-padding;
+      padding: 4px 6px;
+    }
+
+    .axish {
+      text-align: center;
+      margin-left: $panels-padding $panels-padding;
+      margin-right: 10px;
+      height: 20px;
+
+      .min-value {
+        position: absolute;
+        top: 0;
+        width: 60px;
+        left: -19px;
+        text-align: center;
+      }
+
+      .max-value {
+        position: absolute;
+        top: 0;
+        width: 60px;
+        right: -13px;
+        text-align: center;
+      }
+    }
+
+    .axish-compact {
+      float: left;
+      text-align: center;
+      margin-left: $panels-padding $panels-padding;
+      margin-right: 10px;
+      height: 20px;
+
+      .min-value {
+        display: inline-block;
+        top: 0;
+        width: 30px;
+        left: -4px;
+        text-align: center;
+      }
+
+      .max-value {
+        display: inline-block;
+        top: 0;
+        width: 60px;
+        right: -13px;
+        text-align: center;
+      }
+    }
+
+    .axisv {
+      margin-top: $panels-padding;
+      margin-bottom: $panels-padding;
+      width: 20px;
+
+      .min-value {
+        position: absolute;
+        bottom: $panels-padding;
+        right: 0;
+      }
+
+      .max-value {
+        position: absolute;
+        top: $panels-padding;
+        right: 0;
+      }
+    }
+  }
+}
+
+.generator-compact-view .generator-distribution-main {
+
+  .distribution-container {
+
+    .distribution-property {
+      display: inline-block;
+      position: initial;
+      margin: 0;
+      padding: 20px 0 0 0;
+
+      .control-label {
+        margin-bottom: 0;
+      }
+
+      input {
+        display: inline-block;
+        width: 50px;
+        border-color: transparent;
+      }
+    }
+  }
+
+}

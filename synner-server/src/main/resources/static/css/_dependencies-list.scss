@@ -1,0 +1,46 @@
+.dependencies-list {
+  vertical-align: middle;
+
+  .dependencies-label {
+    display: block;
+    float: left;
+    padding-top: 2px;
+    font-size: 80%;
+  }
+
+  .fields {
+    display: block;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    .dependency {
+      cursor: pointer;
+      margin-right: .2em;
+      padding: 0.4em;
+      border: 1px solid #ddd;
+
+      .fa {
+        margin-left: 0.4em;
+      }
+    }
+
+    .dependency-selected {
+      background-color: #bdbdbd;
+    }
+
+    .dependency-new {
+      -webkit-appearance: none;
+      text-overflow: '';
+      border: 1px solid #ddd;
+      margin: 0;
+      height: 17px;
+      width: 2.8em;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+  }
+
+}

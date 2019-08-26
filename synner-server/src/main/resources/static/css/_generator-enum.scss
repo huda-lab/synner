@@ -1,0 +1,160 @@
+$case-height: 29px;
+$case-height-padding: 6px;
+
+.generator-string-enum, .generator-number-enum {
+  padding: 1px;
+
+  > table {
+    width: 100%;
+
+    th {
+      padding-bottom: 5px;
+
+      &.cases-header-ratio {
+        text-align: center;
+      }
+
+      &.cases-header-freqpb {
+        text-align: left;
+      }
+    }
+
+    tr.case-row {
+      height: $input-height + $case-height-padding;
+
+      .case-value {
+        .input-group {
+          width: 100%;
+        }
+        .form-control {
+          height: $input-height;
+          width: 100% !important;
+        }
+        .void-input {
+          border: none;
+          box-shadow: none;
+
+          &:focus {
+            outline: none;
+          }
+        }
+        .input-group-btn {
+          width: 1% !important;
+        }
+      }
+
+      .case-hist-filler {
+        padding: 0;
+        margin: 0;
+        border-top: 1px solid rgb(204, 204, 204);
+        height: 1px;
+      }
+
+      .case-freq-value {
+        width: 18px;
+        white-space: nowrap;
+
+        .freq-value {
+          text-align: center;
+          width: 18px;
+        }
+      }
+
+      .case-ratio {
+        width: 50px;
+        vertical-align: middle;
+        display: inline-block;
+        text-align: center;
+
+        input {
+          width: 4rem;
+          text-align: center;
+          border: 1px solid #ddd;
+        }
+      }
+
+      .case-freqpb {
+        text-align: left;
+
+        .progress {
+          border: none;
+          display: inline-block;
+          width: 150px;
+          height: $case-height + $case-height-padding - 1;
+          margin: 0 50px 0 0;
+          padding: 0;
+          overflow: visible;
+          vertical-align: middle;
+          position: relative;
+          background: inherit;
+
+          .progress-bar {
+            background-color: #0053ba2e;
+            box-shadow: none;
+            border-right: 1px solid rgb(0, 45, 136);
+            transition: none;
+          }
+
+          &.pg-hover {
+            .ratio-value {
+              display: none;
+            }
+            .freq-btn-decrease, .freq-btn-increase {
+              display: block;
+            }
+
+          }
+
+          .ratio-value {
+            display: block;
+            position: absolute;
+            top: 9px;
+            width: 50px;
+            text-align: left;
+            padding: 2px;
+          }
+
+          .freq-btn-decrease, .freq-btn-increase {
+            display: none;
+            position: absolute;
+            top: 0;
+            width: 20px;
+            height: $case-height + $case-height-padding - 1;
+            padding: 10px 0 0 0;
+            width: 20px;
+            text-align: center;
+            padding: 10px 0 0 0;
+
+            &:hover {
+              background-color: #EBEBEB;
+              cursor: pointer;
+            }
+
+          }
+
+          .freq-btn-decrease {
+            margin-left: -20px;
+          }
+
+          .simexperiments-container {
+            position: absolute;
+            height: $case-height;
+            width: 100%;
+
+            .simres {
+              position: absolute;
+              opacity: 0.3;
+              width: 10px;
+              height: $case-height + $case-height-padding - 1;
+              background-color: rgba(70, 130, 180, 0.5);
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+  }
+}

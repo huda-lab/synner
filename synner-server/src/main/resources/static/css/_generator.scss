@@ -1,0 +1,63 @@
+.generator {
+  position: relative;
+
+  .generator-layout-table {
+    height: 100%;
+
+    .generator-content-td {
+      width: 100%;
+      border-left: 1px solid #ddd;
+    }
+
+    > tbody > tr > td {
+      vertical-align: top;
+    }
+
+  }
+
+  > .panel {
+    padding: $panels-padding;
+    height: 100%;
+
+    .panel-body {
+      padding: 0;
+    }
+  }
+
+  .form-group {
+    margin-bottom: 0;
+
+    .list-group {
+      max-height: 188px;
+      overflow-y: auto;
+      margin-bottom: 0;
+    }
+
+  }
+
+  .generator-modalities {
+    padding-right: $panels-padding;
+    float: left;
+
+    .list-group-item {
+      white-space: nowrap;
+    }
+  }
+
+  .generator-content {
+    padding-left: $panels-padding;
+  }
+
+}
+
+.generator.generator-compact-view {
+
+  .generator-modalities {
+
+    .form-group {
+      margin-bottom: 0;
+    }
+
+  }
+
+}

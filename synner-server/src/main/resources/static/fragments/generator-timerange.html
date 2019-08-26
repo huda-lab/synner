@@ -1,0 +1,34 @@
+<div class="generator-timerange">
+
+    <table>
+        <tr>
+            <td>
+                <label>From:</label>
+            </td>
+            <td>
+                <div class="select-container">
+                    <select ng-options="hour as formatNum(hour) for hour in possibleHours" ng-model="selectedFromHour"></select>
+                </div>
+                :
+                <div class="select-container">
+                    <select ng-options="minute as formatNum(minute) for minute in possibleMinutes" ng-model="selectedFromMinute"></select>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>To:</label>
+            </td>
+            <td>
+                <div class="select-container">
+                    <select ng-options="hour as formatNum(hour) for hour in possibleHours" ng-model="selectedToHour"></select>
+                </div>
+                :
+                <div class="select-container">
+                    <select ng-options="minute as formatNum(minute) for minute in possibleMinutes" ng-model="selectedToMinute"></select>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+</div>

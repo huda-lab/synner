@@ -1,0 +1,199 @@
+.generator-visrel {
+  $simplot-margin-left: 45px;
+  $simplot-margin-top: 5px;
+  $simplot-margin-bottom: 25px;
+  $simplot-margin-right: 20px;
+  $simplot-height: 250px;
+  $simplot-width: $simplot-height * 2.5;
+  $canvas-height: $simplot-height - $simplot-margin-bottom - $simplot-margin-top;
+  $canvas-width: $simplot-width - $simplot-margin-right - $simplot-margin-left;
+
+  .visrel-canvas-simplot-container {
+    position: relative;
+    height: $simplot-height;
+    width: $simplot-width;
+    margin: 5px 10px 5px 0;
+
+    .visrel-canvas {
+      position: absolute;
+      top: $simplot-margin-top;
+      left: $simplot-margin-left;
+      width: $canvas-width;
+      height: $canvas-height;
+    }
+
+    .visrel-simplot {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: $simplot-height;
+      width: $simplot-width;
+
+      .axis path,
+      .axis line {
+        fill: none;
+        stroke: #000;
+        shape-rendering: crispEdges;
+      }
+      .sample-area {
+        fill: #0085ff;
+        opacity: 0.05;
+      }
+      .highlighted {
+        stroke: #176fbf;
+        stroke-width: 1px;
+        stroke-dasharray: 3;
+        opacity: 0.2;
+        fill-opacity: 0.5;
+      }
+      .line {
+        fill: none;
+        stroke-width: 1px;
+        stroke: rgb(0, 133, 255);
+      }
+      .sample-dot {
+        fill: #417bb7;
+      }
+
+    }
+
+  }
+
+  .slider-table {
+    margin-left: auto;
+    margin-right: auto;
+
+    .rzslider {
+      margin: 10px 5px 5px 5px;
+      display: inline-block;
+      width: 350px;
+
+      .rz-tick {
+        width: 1px;
+        border-radius: 0;
+      }
+
+      .rz-bubble {
+        visibility: hidden !important;
+        display: none !important;
+      }
+
+    }
+
+    .min-slider-tick {
+      margin-top: -3px;
+      float: left;
+      width: 50px;
+      text-align: center;
+      margin-left: -20px;
+      border: 0;
+      padding: 0;
+    }
+
+    .max-slider-tick {
+      margin-top: -3px;
+      float: right;
+      width: 50px;
+      text-align: center;
+      margin-right: -20px;
+    }
+
+  }
+
+  .control-buttons {
+    vertical-align: bottom;
+    padding: 5px;
+
+    .btn {
+      margin: 2px;
+    }
+
+  }
+
+  .axish {
+    position: relative;
+    text-align: center;
+    margin-left: $panels-padding $panels-padding;
+    margin-right: 10px;
+    height: 30px;
+    width: $canvas-width;
+
+    .graph-tick-line {
+      position: absolute;
+      bottom: 0;
+      left: 27.5px;
+      width: 1px;
+      height: 27px;
+      background: black;
+    }
+
+    .source-max {
+      position: absolute;
+      right: 4px;
+      top: 0;
+      input {
+        position: relative;
+        width: 55px;
+        padding: 0;
+        font-size: 10pt;
+        text-align: center;
+        margin-right: -6x;
+      }
+    }
+
+    .source-min {
+      position: absolute;
+      left: 16px;
+      top: 0;
+      input {
+        position: relative;
+        width: 55px;
+        padding: 0;
+        font-size: 10pt;
+        text-align: center;
+      }
+    }
+
+  }
+
+  .axisv {
+    position: relative;
+    width: 60px;
+    margin-top: $panels-padding;
+    margin-bottom: $panels-padding;
+
+    .graph-tick-line {
+      position: absolute;
+      top: 10px;
+      left: 5px;
+      height: 1px;
+      background: black;
+      width: 55px;
+    }
+
+    .target-max {
+      position: absolute;
+      top: 0;
+      input {
+        position: relative;
+        width: 55px;
+        padding: 0;
+        font-size: 10pt;
+        text-align: center;
+      }
+    }
+
+    .target-min {
+      position: absolute;
+      top: 0;
+      input {
+        position: relative;
+        width: 55px;
+        padding: 0;
+        font-size: 10pt;
+        text-align: center;
+      }
+    }
+  }
+
+}

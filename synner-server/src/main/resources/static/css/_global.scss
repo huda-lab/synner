@@ -1,0 +1,203 @@
+body, html { margin: 0; height: 100% }
+
+body {
+  overflow: hidden;
+}
+
+html {
+  ::-webkit-scrollbar {
+    width: $scrollbar-width * 1.3;
+    height: $scrollbar-height;
+  }
+  ::-webkit-scrollbar-button {
+    display: none;
+  }
+  ::-webkit-scrollbar-track-piece {
+    background: $scrollbar-track-piece;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: $scrollbar-thumb;
+  }
+}
+
+select.form-control {
+  height: initial;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.value-decoration {
+  color: #999;
+}
+
+.properties-panel {
+  max-height: 100%;
+  margin: 0;
+  overflow-y: scroll;
+  border: none;
+  border-left: 1px solid #cacaca;
+
+  .form-group {
+    margin-bottom: 0;
+  }
+
+  .radio, .checkbox {
+    margin-bottom: 0;
+  }
+}
+
+.error-message {
+  padding: 5px;
+  position: fixed;
+  bottom: 0;
+  background: #f34f4f73;
+  width: 100%;
+  border-top: black 1px solid;
+  color: black;
+
+  .error-message-label {
+    font-weight: bold;
+    color: #333333;
+  }
+}
+
+.panel-title {
+  width: 100%;
+  margin: 0;
+  padding: .3em .5em;
+  background-color: #e7e7e7;
+}
+
+.panel-inline {
+  display: inline-block;
+}
+
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.list-group-item-action {
+  cursor: pointer;
+}
+
+.input-group {
+  display: inline-table;
+  vertical-align: middle;
+
+  .input-group-addon,
+  .input-group-btn,
+  .form-control {
+    width: auto !important;
+  }
+
+  .input-group-addon-blank {
+    background: transparent;
+  }
+}
+
+.dropdown-menu {
+  max-height: 200px;
+  overflow-y: auto;
+
+  > li {
+    padding: 0;
+    > a {
+      padding: 8px 10px;
+
+      small {
+        float: right;
+        color: #999;
+      }
+    }
+  }
+}
+
+.dropdown-left-manual {
+  right: 0;
+  left: auto;
+  padding-left: 1px;
+  padding-right: 1px;
+}
+
+.form-control.form-control-inline {
+  display: inline-block;
+}
+
+.btn-xxs, .btn-group-xxs > .btn {
+  padding: 1px 6px;
+}
+
+.btn-xs, .btn-group-xs > .btn {
+  padding: 4px 6px 5px 6px;
+}
+
+.btn-default-deselected, .btn-default-deselected:hover {
+  background-color: #ffffff;
+}
+
+// Table
+.ghost-editable {
+  //width: 100%;
+  border: none;
+  display: inline;
+
+  &:focus {
+    outline: none;
+  }
+
+  transition: width 0.3s;
+}
+
+// Slider theme
+.rzslider {
+  * {
+    outline: none !important;
+  }
+
+  .rz-pointer {
+    top: -7px;
+    z-index: 3;
+    width: 16px;
+    height: 16px;
+
+    &:after {
+      content: none;
+    }
+  }
+}
+
+.label {
+  white-space: nowrap;
+}
+
+.select-container {
+  border: 1px solid #ccc;
+  background: #ddd;
+  display: inline-block;
+
+  select {
+
+    &:focus {
+      outline: none;
+    }
+
+    border: none;
+    background: transparent;
+    min-width: 80px;
+  }
+}
+
+.modal {
+  z-index: 1040 !important;
+}
+
+.modal-backdrop {
+  z-index: 1035 !important;
+}

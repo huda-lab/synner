@@ -1,0 +1,79 @@
+{
+  "model": {
+    "name": {
+      "pos": 0,
+      "type": "string",
+      "generator": {
+        "regexp": "[AEIOU]([b-df-hj-np-tv-z]{1,2}[aeiou]){1,3}"
+      }
+    },
+    "gender": {
+      "pos": 1,
+      "type": "string",
+      "generator": {
+        "cases": [
+          {
+            "value": "M"
+          },
+          {
+            "value": "F"
+          }
+        ],
+        "ratios": [
+          48,
+          52
+        ]
+      }
+    },
+    "age": {
+      "pos": 2,
+      "type": "integer",
+      "generator": {
+        "distribution": "uniform",
+        "min": 10,
+        "max": 70
+      }
+    },
+    "weight": {
+      "pos": 3,
+      "dependencies": ["gender"],
+      "type": "integer",
+      "generator": {
+        "switch": [
+          {
+            "case": "gender == 'M'",
+            "then": {
+              "value": 42
+            }
+          },
+          {
+            "case": "gender == 'F'",
+            "then": {
+              "distribution": "gaussian",
+              "mean": 40,
+              "stdev": 10
+            }
+          },
+          {
+            "default": {
+              "value": -1
+            }
+          }
+        ]
+      }
+    },
+    "height": {
+      "pos": 4,
+      "dependencies": ["age"],
+      "type": "integer",
+      "generator": {
+        "function": "age * 10"
+      }
+    }
+  },
+  "data": {
+    "to-add": 10,
+    "tuples": [
+    ]
+  }
+}

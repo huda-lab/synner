@@ -1,0 +1,1167 @@
+body, html {
+  margin: 0;
+  height: 100%; }
+
+body {
+  overflow: hidden; }
+
+html ::-webkit-scrollbar {
+  width: 5.2px;
+  height: 5px; }
+html ::-webkit-scrollbar-button {
+  display: none; }
+html ::-webkit-scrollbar-track-piece {
+  background: #dadada; }
+html ::-webkit-scrollbar-thumb {
+  background: #aaa; }
+
+select.form-control {
+  height: initial; }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+.value-decoration {
+  color: #999; }
+
+.properties-panel {
+  max-height: 100%;
+  margin: 0;
+  overflow-y: scroll;
+  border: none;
+  border-left: 1px solid #cacaca; }
+  .properties-panel .form-group {
+    margin-bottom: 0; }
+  .properties-panel .radio, .properties-panel .checkbox {
+    margin-bottom: 0; }
+
+.error-message {
+  padding: 5px;
+  position: fixed;
+  bottom: 0;
+  background: #f34f4f73;
+  width: 100%;
+  border-top: black 1px solid;
+  color: black; }
+  .error-message .error-message-label {
+    font-weight: bold;
+    color: #333333; }
+
+.panel-title {
+  width: 100%;
+  margin: 0;
+  padding: .3em .5em;
+  background-color: #e7e7e7; }
+
+.panel-inline {
+  display: inline-block; }
+
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+.list-group-item-action {
+  cursor: pointer; }
+
+.input-group {
+  display: inline-table;
+  vertical-align: middle; }
+  .input-group .input-group-addon,
+  .input-group .input-group-btn,
+  .input-group .form-control {
+    width: auto !important; }
+  .input-group .input-group-addon-blank {
+    background: transparent; }
+
+.dropdown-menu {
+  max-height: 200px;
+  overflow-y: auto; }
+  .dropdown-menu > li {
+    padding: 0; }
+    .dropdown-menu > li > a {
+      padding: 8px 10px; }
+      .dropdown-menu > li > a small {
+        float: right;
+        color: #999; }
+
+.dropdown-left-manual {
+  right: 0;
+  left: auto;
+  padding-left: 1px;
+  padding-right: 1px; }
+
+.form-control.form-control-inline {
+  display: inline-block; }
+
+.btn-xxs, .btn-group-xxs > .btn {
+  padding: 1px 6px; }
+
+.btn-xs, .btn-group-xs > .btn {
+  padding: 4px 6px 5px 6px; }
+
+.btn-default-deselected, .btn-default-deselected:hover {
+  background-color: #ffffff; }
+
+.ghost-editable, #main-properties-panel .main-panel-title > input, #main-properties-panel .main-panel-title > div, #synner-data-table .table tr th .field-properties-and-actions select.type-select, #synner-data-table input[type=text], #synner-data-table input[type=number], #synner-data-table input[type=time], #synner-data-table input[type=date] {
+  border: none;
+  display: inline;
+  transition: width 0.3s; }
+  .ghost-editable:focus, #main-properties-panel .main-panel-title > input:focus, #main-properties-panel .main-panel-title > div:focus, #synner-data-table .table tr th .field-properties-and-actions select.type-select:focus, #synner-data-table input[type=text]:focus, #synner-data-table input[type=number]:focus, #synner-data-table input[type=time]:focus, #synner-data-table input[type=date]:focus {
+    outline: none; }
+
+.rzslider * {
+  outline: none !important; }
+.rzslider .rz-pointer {
+  top: -7px;
+  z-index: 3;
+  width: 16px;
+  height: 16px; }
+  .rzslider .rz-pointer:after {
+    content: none; }
+
+.label {
+  white-space: nowrap; }
+
+.select-container {
+  border: 1px solid #ccc;
+  background: #ddd;
+  display: inline-block; }
+  .select-container select {
+    border: none;
+    background: transparent;
+    min-width: 80px; }
+    .select-container select:focus {
+      outline: none; }
+
+.modal {
+  z-index: 1040 !important; }
+
+.modal-backdrop {
+  z-index: 1035 !important; }
+
+#main-properties-panel {
+  min-height: 300px; }
+  #main-properties-panel .main-panel-title {
+    display: inline-block;
+    writing-mode: tb-rl;
+    transform: rotate(-180deg);
+    float: left;
+    margin: 0.5em 0.3em 0.5em 0.3em; }
+    #main-properties-panel .main-panel-title > input, #main-properties-panel .main-panel-title > div {
+      line-height: 0.1rem; }
+
+.generator {
+  position: relative; }
+  .generator .generator-layout-table {
+    height: 100%; }
+    .generator .generator-layout-table .generator-content-td {
+      width: 100%;
+      border-left: 1px solid #ddd; }
+    .generator .generator-layout-table > tbody > tr > td {
+      vertical-align: top; }
+  .generator > .panel {
+    padding: 10px;
+    height: 100%; }
+    .generator > .panel .panel-body {
+      padding: 0; }
+  .generator .form-group {
+    margin-bottom: 0; }
+    .generator .form-group .list-group {
+      max-height: 188px;
+      overflow-y: auto;
+      margin-bottom: 0; }
+  .generator .generator-modalities {
+    padding-right: 10px;
+    float: left; }
+    .generator .generator-modalities .list-group-item {
+      white-space: nowrap; }
+  .generator .generator-content {
+    padding-left: 10px; }
+
+.generator.generator-compact-view .generator-modalities .form-group {
+  margin-bottom: 0; }
+
+#synner-data-table {
+  position: relative;
+  margin-bottom: 0;
+  border-bottom: 1px solid #333333;
+  overflow-x: auto; }
+  #synner-data-table ::-webkit-scrollbar {
+    width: 4px;
+    height: 5px; }
+  #synner-data-table ::-webkit-scrollbar-button {
+    display: none; }
+  #synner-data-table ::-webkit-scrollbar-track-piece {
+    background: #dadada; }
+  #synner-data-table ::-webkit-scrollbar-thumb {
+    background: #aaa; }
+  #synner-data-table .table {
+    width: auto;
+    margin-bottom: 0; }
+    #synner-data-table .table tbody {
+      display: block;
+      height: 200px;
+      overflow-y: auto; }
+    #synner-data-table .table thead, #synner-data-table .table tbody tr {
+      display: table;
+      table-layout: fixed; }
+    #synner-data-table .table tr td {
+      background-color: transparent;
+      transition: all 0.5s ease; }
+    #synner-data-table .table tr.highlighted td, #synner-data-table .table tr.highlighted:hover td {
+      background-color: #fffdd4 !important;
+      transition: all 0.5s ease; }
+    #synner-data-table .table tr .selected {
+      background-color: rgba(245, 245, 245, 0.8); }
+    #synner-data-table .table tr .numerical-row {
+      text-align: right; }
+    #synner-data-table .table tr th {
+      white-space: nowrap;
+      border-right: 1px solid #ddd;
+      padding-bottom: .45em; }
+      #synner-data-table .table tr th .field-name {
+        width: 129px; }
+        #synner-data-table .table tr th .field-name.field-name-error {
+          color: red; }
+      #synner-data-table .table tr th .field-properties-and-actions {
+        float: right; }
+        #synner-data-table .table tr th .field-properties-and-actions select.type-select {
+          margin-left: 5px;
+          -webkit-appearance: none;
+          text-overflow: ''; }
+        #synner-data-table .table tr th .field-properties-and-actions .field-hide {
+          margin-left: 5px;
+          color: gray; }
+        #synner-data-table .table tr th .field-properties-and-actions .field-remove {
+          margin-left: 5px;
+          color: gray; }
+        #synner-data-table .table tr th .field-properties-and-actions .fa-exclamation-triangle {
+          margin-left: 5px;
+          color: gray; }
+        #synner-data-table .table tr th .field-properties-and-actions .fa-filter {
+          margin-left: 5px;
+          color: gray; }
+      #synner-data-table .table tr th.field-header {
+        position: relative; }
+      #synner-data-table .table tr th.field-header-dependencies {
+        vertical-align: middle; }
+        #synner-data-table .table tr th.field-header-dependencies ::-webkit-scrollbar {
+          width: 4px; }
+        #synner-data-table .table tr th.field-header-dependencies ::-webkit-scrollbar-button {
+          display: none; }
+        #synner-data-table .table tr th.field-header-dependencies ::-webkit-scrollbar-track-piece {
+          background: #dadada; }
+        #synner-data-table .table tr th.field-header-dependencies ::-webkit-scrollbar-thumb {
+          background: #aaa; }
+    #synner-data-table .table tr td, #synner-data-table .table tr th {
+      width: 270px;
+      min-width: 270px; }
+    #synner-data-table .table .field-data {
+      border-right: 1px solid #ddd;
+      white-space: nowrap; }
+      #synner-data-table .table .field-data .fa-lock {
+        color: rgba(128, 128, 128, 0.35); }
+      #synner-data-table .table .field-data .special-value {
+        color: #ff5b5b; }
+      #synner-data-table .table .field-data input[type=text], #synner-data-table .table .field-data input[type=number], #synner-data-table .table .field-data input[type=time], #synner-data-table .table .field-data input[type=date] {
+        width: 90%; }
+    #synner-data-table .table th.field-data-last-col, #synner-data-table .table td.field-data-last-col {
+      width: 0px;
+      min-width: 0px;
+      max-width: 0px;
+      padding: 0;
+      border: none; }
+    #synner-data-table .table .add-column-button {
+      position: absolute; }
+    #synner-data-table .table th.field-data-add-column, #synner-data-table .table td.field-data-add-column {
+      width: 100%;
+      border-right: none;
+      padding: 0;
+      vertical-align: middle;
+      border-bottom: none;
+      border-top: none; }
+      #synner-data-table .table th.field-data-add-column .dropdown > button, #synner-data-table .table td.field-data-add-column .dropdown > button {
+        border-left: none;
+        font-weight: bold;
+        background: transparent; }
+  #synner-data-table .add-column-column {
+    vertical-align: top;
+    padding: 0;
+    margin: 0; }
+    #synner-data-table .add-column-column .add-column-button {
+      margin-left: 0;
+      margin-right: 0;
+      margin-left: -5px;
+      margin-top: 5px; }
+  #synner-data-table input[type=text], #synner-data-table input[type=number], #synner-data-table input[type=time], #synner-data-table input[type=date] {
+    background: transparent !important; }
+
+.generator-distribution-main .generator-distribution-main-layout-table {
+  width: 100%; }
+  .generator-distribution-main .generator-distribution-main-layout-table .distribution-container-td {
+    width: 100%; }
+  .generator-distribution-main .generator-distribution-main-layout-table > tbody > tr > td {
+    vertical-align: top; }
+.generator-distribution-main .distribution-chooser {
+  float: left;
+  clear: left;
+  margin-right: 10px; }
+  .generator-distribution-main .distribution-chooser:focus {
+    outline: -webkit-focus-ring-color auto 0; }
+.generator-distribution-main .generator-distribution {
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  width: 100%;
+  table-layout: fixed;
+  margin: auto;
+  font-size: 12px; }
+  .generator-distribution-main .generator-distribution .theoretical-line {
+    stroke: #0085ff; }
+  .generator-distribution-main .generator-distribution .theoretical-area {
+    fill: #0085ff;
+    fill-opacity: 0.1; }
+  .generator-distribution-main .generator-distribution .highlighted-histogram {
+    fill: #ffa24d;
+    fill-opacity: 0.7; }
+  .generator-distribution-main .generator-distribution .min-max-area {
+    fill: #0085ff;
+    fill-opacity: 0.4; }
+  .generator-distribution-main .generator-distribution .theoretical-stdev {
+    stroke-linecap: round;
+    stroke-width: 3px;
+    fill: #b7b7b7;
+    stroke: #b7b7b7; }
+  .generator-distribution-main .generator-distribution .theoretical-mean {
+    stroke-width: 3px;
+    fill: #ff7c7e;
+    stroke: #ff7c7e;
+    stroke-linecap: round; }
+  .generator-distribution-main .generator-distribution .theoretical-rate {
+    stroke-width: 3px;
+    fill: #b7b7b7;
+    stroke: #b7b7b7;
+    stroke-linecap: round; }
+  .generator-distribution-main .generator-distribution .theoretical-min {
+    stroke-width: 3px;
+    fill: #b7b7b7;
+    stroke: #b7b7b7;
+    stroke-linecap: round; }
+  .generator-distribution-main .generator-distribution .theoretical-max {
+    stroke-width: 3px;
+    fill: #b7b7b7;
+    stroke: #b7b7b7;
+    stroke-linecap: round; }
+  .generator-distribution-main .generator-distribution .theoretical-shape {
+    stroke-width: 3px;
+    fill: #b7b7b7;
+    stroke: #b7b7b7;
+    stroke-linecap: round; }
+  .generator-distribution-main .generator-distribution .theoretical-scale {
+    stroke-width: 3px;
+    fill: #ff7c7e;
+    stroke: #ff7c7e;
+    stroke-linecap: round; }
+  .generator-distribution-main .generator-distribution .distribution-bin {
+    fill: rgba(173, 216, 230, 0.51);
+    stroke: none; }
+  .generator-distribution-main .generator-distribution .sample {
+    stroke: #0085ff;
+    stroke-opacity: 0.2;
+    stroke-width: 1.5px;
+    fill: none; }
+    .generator-distribution-main .generator-distribution .sample.hidden-sample {
+      stroke-opacity: 0;
+      stroke-width: 3px; }
+    .generator-distribution-main .generator-distribution .sample.highlighted {
+      stroke-width: 1.5px;
+      stroke: #0085ff;
+      stroke-dasharray: 2;
+      stroke-opacity: 0.7; }
+  .generator-distribution-main .generator-distribution .specs {
+    font-size: 12px;
+    background: #ddd;
+    padding: 4px;
+    border-radius: 4px;
+    display: none; }
+  .generator-distribution-main .generator-distribution .distribution-property {
+    padding: 10px 0 10px 0;
+    max-width: 375px;
+    text-align: center; }
+    .generator-distribution-main .generator-distribution .distribution-property .control-label {
+      font-size: 17px;
+      margin-bottom: 10px; }
+    .generator-distribution-main .generator-distribution .distribution-property .mean-closeup .ticks line, .generator-distribution-main .generator-distribution .distribution-property .stdev-closeup .ticks line, .generator-distribution-main .generator-distribution .distribution-property .rate-closeup .ticks line, .generator-distribution-main .generator-distribution .distribution-property .shape-closeup .ticks line, .generator-distribution-main .generator-distribution .distribution-property .scale-closeup .ticks line, .generator-distribution-main .generator-distribution .distribution-property .min-closeup .ticks line, .generator-distribution-main .generator-distribution .distribution-property .max-closeup .ticks line {
+      fill: none;
+      stroke: black; }
+    .generator-distribution-main .generator-distribution .distribution-property .mean-closeup .domain, .generator-distribution-main .generator-distribution .distribution-property .stdev-closeup .domain, .generator-distribution-main .generator-distribution .distribution-property .rate-closeup .domain, .generator-distribution-main .generator-distribution .distribution-property .shape-closeup .domain, .generator-distribution-main .generator-distribution .distribution-property .scale-closeup .domain, .generator-distribution-main .generator-distribution .distribution-property .min-closeup .domain, .generator-distribution-main .generator-distribution .distribution-property .max-closeup .domain {
+      fill: none;
+      stroke: black; }
+    .generator-distribution-main .generator-distribution .distribution-property .mean-closeup line.sample, .generator-distribution-main .generator-distribution .distribution-property .stdev-closeup line.sample, .generator-distribution-main .generator-distribution .distribution-property .rate-closeup line.sample, .generator-distribution-main .generator-distribution .distribution-property .shape-closeup line.sample, .generator-distribution-main .generator-distribution .distribution-property .scale-closeup line.sample, .generator-distribution-main .generator-distribution .distribution-property .min-closeup line.sample, .generator-distribution-main .generator-distribution .distribution-property .max-closeup line.sample {
+      fill: none;
+      stroke-opacity: 1; }
+      .generator-distribution-main .generator-distribution .distribution-property .mean-closeup line.sample.highlighted, .generator-distribution-main .generator-distribution .distribution-property .stdev-closeup line.sample.highlighted, .generator-distribution-main .generator-distribution .distribution-property .rate-closeup line.sample.highlighted, .generator-distribution-main .generator-distribution .distribution-property .shape-closeup line.sample.highlighted, .generator-distribution-main .generator-distribution .distribution-property .scale-closeup line.sample.highlighted, .generator-distribution-main .generator-distribution .distribution-property .min-closeup line.sample.highlighted, .generator-distribution-main .generator-distribution .distribution-property .max-closeup line.sample.highlighted {
+        stroke-width: 3px;
+        stroke: #0085ff; }
+    .generator-distribution-main .generator-distribution .distribution-property .mean-closeup rect.sample, .generator-distribution-main .generator-distribution .distribution-property .stdev-closeup rect.sample, .generator-distribution-main .generator-distribution .distribution-property .rate-closeup rect.sample, .generator-distribution-main .generator-distribution .distribution-property .shape-closeup rect.sample, .generator-distribution-main .generator-distribution .distribution-property .scale-closeup rect.sample, .generator-distribution-main .generator-distribution .distribution-property .min-closeup rect.sample, .generator-distribution-main .generator-distribution .distribution-property .max-closeup rect.sample {
+      stroke: none; }
+    .generator-distribution-main .generator-distribution .distribution-property .stdev-closeup line.sample {
+      stroke: #b7b7b7; }
+    .generator-distribution-main .generator-distribution .distribution-property .stdev-closeup rect.sample {
+      fill: #b7b7b7; }
+      .generator-distribution-main .generator-distribution .distribution-property .stdev-closeup rect.sample.layered {
+        fill-opacity: 0.15; }
+    .generator-distribution-main .generator-distribution .distribution-property .mean-closeup line.sample {
+      stroke: #ff7c7e; }
+    .generator-distribution-main .generator-distribution .distribution-property .mean-closeup rect.sample {
+      fill: #ff7c7e; }
+      .generator-distribution-main .generator-distribution .distribution-property .mean-closeup rect.sample.layered {
+        fill-opacity: 0.15; }
+    .generator-distribution-main .generator-distribution .distribution-property .rate-closeup line.sample {
+      stroke: #b7b7b7; }
+    .generator-distribution-main .generator-distribution .distribution-property .rate-closeup rect.sample {
+      fill: #b7b7b7; }
+      .generator-distribution-main .generator-distribution .distribution-property .rate-closeup rect.sample.layered {
+        fill-opacity: 0.15; }
+    .generator-distribution-main .generator-distribution .distribution-property .shape-closeup line.sample {
+      stroke: #b7b7b7; }
+    .generator-distribution-main .generator-distribution .distribution-property .shape-closeup rect.sample {
+      fill: #b7b7b7; }
+      .generator-distribution-main .generator-distribution .distribution-property .shape-closeup rect.sample.layered {
+        fill-opacity: 0.15; }
+    .generator-distribution-main .generator-distribution .distribution-property .scale-closeup line.sample {
+      stroke: #ff7c7e; }
+    .generator-distribution-main .generator-distribution .distribution-property .scale-closeup rect.sample {
+      fill: #ff7c7e; }
+      .generator-distribution-main .generator-distribution .distribution-property .scale-closeup rect.sample.layered {
+        fill-opacity: 0.15; }
+    .generator-distribution-main .generator-distribution .distribution-property .min-closeup line.sample, .generator-distribution-main .generator-distribution .distribution-property .max-closeup line.sample {
+      stroke: #b7b7b7; }
+    .generator-distribution-main .generator-distribution .distribution-property .min-closeup rect.sample, .generator-distribution-main .generator-distribution .distribution-property .max-closeup rect.sample {
+      fill: #b7b7b7; }
+      .generator-distribution-main .generator-distribution .distribution-property .min-closeup rect.sample.layered, .generator-distribution-main .generator-distribution .distribution-property .max-closeup rect.sample.layered {
+        fill-opacity: 0.15; }
+    .generator-distribution-main .generator-distribution .distribution-property input {
+      width: 50px;
+      padding: 2px;
+      text-align: center;
+      margin: auto; }
+      .generator-distribution-main .generator-distribution .distribution-property input:focus {
+        outline: none; }
+    .generator-distribution-main .generator-distribution .distribution-property input::-webkit-outer-spin-button,
+    .generator-distribution-main .generator-distribution .distribution-property input::-webkit-inner-spin-button {
+      /* display: none; <- Crashes Chrome on hover */
+      -webkit-appearance: none;
+      margin: 0;
+      /* <-- Apparently some margin are still there even though it's hidden */ }
+  .generator-distribution-main .generator-distribution .distribution-plot-container {
+    vertical-align: top;
+    text-align: center;
+    width: 760px; }
+    .generator-distribution-main .generator-distribution .distribution-plot-container svg {
+      height: 250px;
+      width: 750px; }
+      .generator-distribution-main .generator-distribution .distribution-plot-container svg .axis path,
+      .generator-distribution-main .generator-distribution .distribution-plot-container svg .axis line {
+        fill: none;
+        stroke: #000;
+        shape-rendering: crispEdges; }
+      .generator-distribution-main .generator-distribution .distribution-plot-container svg .line {
+        fill: none;
+        stroke-width: 1px; }
+.generator-distribution-main .generator-distribution-custom {
+  margin-left: 30px; }
+  .generator-distribution-main .generator-distribution-custom table {
+    max-width: 750px; }
+    .generator-distribution-main .generator-distribution-custom table td {
+      position: relative; }
+    .generator-distribution-main .generator-distribution-custom table .td-canvas {
+      padding: 11px 11px 0 4px; }
+  .generator-distribution-main .generator-distribution-custom canvas {
+    height: 220px;
+    width: 750px; }
+  .generator-distribution-main .generator-distribution-custom .control-buttons {
+    vertical-align: bottom;
+    padding: 20px; }
+  .generator-distribution-main .generator-distribution-custom .clean-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 4px 6px; }
+  .generator-distribution-main .generator-distribution-custom .axish {
+    text-align: center;
+    margin-left: 10px 10px;
+    margin-right: 10px;
+    height: 20px; }
+    .generator-distribution-main .generator-distribution-custom .axish .min-value {
+      position: absolute;
+      top: 0;
+      width: 60px;
+      left: -19px;
+      text-align: center; }
+    .generator-distribution-main .generator-distribution-custom .axish .max-value {
+      position: absolute;
+      top: 0;
+      width: 60px;
+      right: -13px;
+      text-align: center; }
+  .generator-distribution-main .generator-distribution-custom .axish-compact {
+    float: left;
+    text-align: center;
+    margin-left: 10px 10px;
+    margin-right: 10px;
+    height: 20px; }
+    .generator-distribution-main .generator-distribution-custom .axish-compact .min-value {
+      display: inline-block;
+      top: 0;
+      width: 30px;
+      left: -4px;
+      text-align: center; }
+    .generator-distribution-main .generator-distribution-custom .axish-compact .max-value {
+      display: inline-block;
+      top: 0;
+      width: 60px;
+      right: -13px;
+      text-align: center; }
+  .generator-distribution-main .generator-distribution-custom .axisv {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 20px; }
+    .generator-distribution-main .generator-distribution-custom .axisv .min-value {
+      position: absolute;
+      bottom: 10px;
+      right: 0; }
+    .generator-distribution-main .generator-distribution-custom .axisv .max-value {
+      position: absolute;
+      top: 10px;
+      right: 0; }
+
+.generator-compact-view .generator-distribution-main .distribution-container .distribution-property {
+  display: inline-block;
+  position: initial;
+  margin: 0;
+  padding: 20px 0 0 0; }
+  .generator-compact-view .generator-distribution-main .distribution-container .distribution-property .control-label {
+    margin-bottom: 0; }
+  .generator-compact-view .generator-distribution-main .distribution-container .distribution-property input {
+    display: inline-block;
+    width: 50px;
+    border-color: transparent; }
+
+.generator-string-enum, .generator-number-enum {
+  padding: 1px; }
+  .generator-string-enum > table, .generator-number-enum > table {
+    width: 100%; }
+    .generator-string-enum > table th, .generator-number-enum > table th {
+      padding-bottom: 5px; }
+      .generator-string-enum > table th.cases-header-ratio, .generator-number-enum > table th.cases-header-ratio {
+        text-align: center; }
+      .generator-string-enum > table th.cases-header-freqpb, .generator-number-enum > table th.cases-header-freqpb {
+        text-align: left; }
+    .generator-string-enum > table tr.case-row, .generator-number-enum > table tr.case-row {
+      height: 35px; }
+      .generator-string-enum > table tr.case-row .case-value .input-group, .generator-number-enum > table tr.case-row .case-value .input-group {
+        width: 100%; }
+      .generator-string-enum > table tr.case-row .case-value .form-control, .generator-number-enum > table tr.case-row .case-value .form-control {
+        height: 29px;
+        width: 100% !important; }
+      .generator-string-enum > table tr.case-row .case-value .void-input, .generator-number-enum > table tr.case-row .case-value .void-input {
+        border: none;
+        box-shadow: none; }
+        .generator-string-enum > table tr.case-row .case-value .void-input:focus, .generator-number-enum > table tr.case-row .case-value .void-input:focus {
+          outline: none; }
+      .generator-string-enum > table tr.case-row .case-value .input-group-btn, .generator-number-enum > table tr.case-row .case-value .input-group-btn {
+        width: 1% !important; }
+      .generator-string-enum > table tr.case-row .case-hist-filler, .generator-number-enum > table tr.case-row .case-hist-filler {
+        padding: 0;
+        margin: 0;
+        border-top: 1px solid #cccccc;
+        height: 1px; }
+      .generator-string-enum > table tr.case-row .case-freq-value, .generator-number-enum > table tr.case-row .case-freq-value {
+        width: 18px;
+        white-space: nowrap; }
+        .generator-string-enum > table tr.case-row .case-freq-value .freq-value, .generator-number-enum > table tr.case-row .case-freq-value .freq-value {
+          text-align: center;
+          width: 18px; }
+      .generator-string-enum > table tr.case-row .case-ratio, .generator-number-enum > table tr.case-row .case-ratio {
+        width: 50px;
+        vertical-align: middle;
+        display: inline-block;
+        text-align: center; }
+        .generator-string-enum > table tr.case-row .case-ratio input, .generator-number-enum > table tr.case-row .case-ratio input {
+          width: 4rem;
+          text-align: center;
+          border: 1px solid #ddd; }
+      .generator-string-enum > table tr.case-row .case-freqpb, .generator-number-enum > table tr.case-row .case-freqpb {
+        text-align: left; }
+        .generator-string-enum > table tr.case-row .case-freqpb .progress, .generator-number-enum > table tr.case-row .case-freqpb .progress {
+          border: none;
+          display: inline-block;
+          width: 150px;
+          height: 34px;
+          margin: 0 50px 0 0;
+          padding: 0;
+          overflow: visible;
+          vertical-align: middle;
+          position: relative;
+          background: inherit; }
+          .generator-string-enum > table tr.case-row .case-freqpb .progress .progress-bar, .generator-number-enum > table tr.case-row .case-freqpb .progress .progress-bar {
+            background-color: #0053ba2e;
+            box-shadow: none;
+            border-right: 1px solid #002d88;
+            transition: none; }
+          .generator-string-enum > table tr.case-row .case-freqpb .progress.pg-hover .ratio-value, .generator-number-enum > table tr.case-row .case-freqpb .progress.pg-hover .ratio-value {
+            display: none; }
+          .generator-string-enum > table tr.case-row .case-freqpb .progress.pg-hover .freq-btn-decrease, .generator-string-enum > table tr.case-row .case-freqpb .progress.pg-hover .freq-btn-increase, .generator-number-enum > table tr.case-row .case-freqpb .progress.pg-hover .freq-btn-decrease, .generator-number-enum > table tr.case-row .case-freqpb .progress.pg-hover .freq-btn-increase {
+            display: block; }
+          .generator-string-enum > table tr.case-row .case-freqpb .progress .ratio-value, .generator-number-enum > table tr.case-row .case-freqpb .progress .ratio-value {
+            display: block;
+            position: absolute;
+            top: 9px;
+            width: 50px;
+            text-align: left;
+            padding: 2px; }
+          .generator-string-enum > table tr.case-row .case-freqpb .progress .freq-btn-decrease, .generator-string-enum > table tr.case-row .case-freqpb .progress .freq-btn-increase, .generator-number-enum > table tr.case-row .case-freqpb .progress .freq-btn-decrease, .generator-number-enum > table tr.case-row .case-freqpb .progress .freq-btn-increase {
+            display: none;
+            position: absolute;
+            top: 0;
+            width: 20px;
+            height: 34px;
+            padding: 10px 0 0 0;
+            width: 20px;
+            text-align: center;
+            padding: 10px 0 0 0; }
+            .generator-string-enum > table tr.case-row .case-freqpb .progress .freq-btn-decrease:hover, .generator-string-enum > table tr.case-row .case-freqpb .progress .freq-btn-increase:hover, .generator-number-enum > table tr.case-row .case-freqpb .progress .freq-btn-decrease:hover, .generator-number-enum > table tr.case-row .case-freqpb .progress .freq-btn-increase:hover {
+              background-color: #EBEBEB;
+              cursor: pointer; }
+          .generator-string-enum > table tr.case-row .case-freqpb .progress .freq-btn-decrease, .generator-number-enum > table tr.case-row .case-freqpb .progress .freq-btn-decrease {
+            margin-left: -20px; }
+          .generator-string-enum > table tr.case-row .case-freqpb .progress .simexperiments-container, .generator-number-enum > table tr.case-row .case-freqpb .progress .simexperiments-container {
+            position: absolute;
+            height: 29px;
+            width: 100%; }
+            .generator-string-enum > table tr.case-row .case-freqpb .progress .simexperiments-container .simres, .generator-number-enum > table tr.case-row .case-freqpb .progress .simexperiments-container .simres {
+              position: absolute;
+              opacity: 0.3;
+              width: 10px;
+              height: 34px;
+              background-color: rgba(70, 130, 180, 0.5); }
+
+.visual-summary .textual-summary {
+  font-weight: 400;
+  font-size: 11px;
+  height: 15px; }
+.visual-summary .chart {
+  width: 100%;
+  height: 40px; }
+  .visual-summary .chart .odd {
+    fill: #6D7993; }
+  .visual-summary .chart .even {
+    fill: steelblue; }
+  .visual-summary .chart rect {
+    fill: steelblue; }
+    .visual-summary .chart rect.missing {
+      fill: #b9b9b9; }
+    .visual-summary .chart rect.error {
+      fill: #d05b5b; }
+  .visual-summary .chart text {
+    fill: white;
+    font: 10px sans-serif;
+    text-anchor: end; }
+
+#synner-data-table .field-filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #ddd;
+  border-right: none;
+  border-left: none; }
+  #synner-data-table .field-filter input[type=text].field-filter-text {
+    display: block;
+    margin: 5px;
+    font-weight: normal;
+    font-family: monospace;
+    width: 224px;
+    border: 1px solid #fff; }
+    #synner-data-table .field-filter input[type=text].field-filter-text.has-error {
+      border: 1px solid red; }
+  #synner-data-table .field-filter .field-filter-error {
+    margin: 5px;
+    font-weight: normal;
+    color: red;
+    max-width: 224px;
+    width: 224px;
+    white-space: normal; }
+  #synner-data-table .field-filter .confirm-dialog {
+    width: 36px;
+    height: 23px;
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    bottom: 0;
+    right: 0; }
+    #synner-data-table .field-filter .confirm-dialog .has-error {
+      color: #ddd; }
+
+#synner-data-table .field-error-missings {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #ddd;
+  border-right: none;
+  border-left: none;
+  padding: 5px; }
+  #synner-data-table .field-error-missings input[type=range] {
+    display: inline-block;
+    margin: 0;
+    width: 50px; }
+  #synner-data-table .field-error-missings .input-label {
+    font-weight: normal;
+    position: relative;
+    top: -3px; }
+  #synner-data-table .field-error-missings .confirm-dialog {
+    width: 36px;
+    height: 23px;
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    bottom: 0;
+    right: 0; }
+    #synner-data-table .field-error-missings .confirm-dialog .has-error {
+      color: #ddd; }
+
+.generator-switch {
+  position: relative;
+  height: 100%;
+  margin-left: 4.2em;
+  padding: 10px;
+  border-left: 1px solid #ddd;
+  overflow: auto; }
+  .generator-switch .new-case-button {
+    margin: 0 5px 10px 0; }
+  .generator-switch > .panel > .panel-heading {
+    padding: 5px 7px; }
+    .generator-switch > .panel > .panel-heading .heading-label {
+      display: inline-block;
+      vertical-align: middle; }
+    .generator-switch > .panel > .panel-heading .case-action-button {
+      margin: 2px;
+      float: right;
+      padding-top: 3px; }
+    .generator-switch > .panel > .panel-heading .ace_editor {
+      height: 2em; }
+    .generator-switch > .panel > .panel-heading .case-condition-container {
+      display: inline-table;
+      position: relative; }
+      .generator-switch > .panel > .panel-heading .case-condition-container .expression-editor {
+        border: 1px solid #ccc;
+        width: 300px; }
+      .generator-switch > .panel > .panel-heading .case-condition-container .dropdown-autosuggestions {
+        opacity: 0; }
+    .generator-switch > .panel > .panel-heading .condition-error {
+      color: red;
+      display: inline-block;
+      margin-right: 4px; }
+
+.generator-domain .domains-list-search {
+  margin-bottom: 10px;
+  display: inline-block; }
+  .generator-domain .domains-list-search .search-text-input {
+    padding-left: 6px;
+    width: auto; }
+.generator-domain .hr-separator {
+  margin-bottom: 0;
+  margin-top: 0; }
+.generator-domain .use-frequencies {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: inline-block; }
+.generator-domain .domain-join {
+  display: inline-block;
+  float: right; }
+  .generator-domain .domain-join select {
+    width: 200px; }
+.generator-domain .domains-list {
+  max-height: 305px;
+  overflow-y: auto;
+  margin: 0; }
+  .generator-domain .domains-list .domain-list-el {
+    margin: 0px 10px 10px 0;
+    border: 1px solid #ddd;
+    display: inline-block;
+    padding: 10px; }
+    .generator-domain .domains-list .domain-list-el.notavailable {
+      border-style: dashed; }
+    .generator-domain .domains-list .domain-list-el .domain-title {
+      font-size: 120%;
+      margin-bottom: 5px; }
+    .generator-domain .domains-list .domain-list-el .domain-examples {
+      font-size: 80%; }
+    .generator-domain .domains-list .domain-list-el:hover {
+      background: #ececec;
+      cursor: pointer; }
+    .generator-domain .domains-list .domain-list-el.active {
+      background: #b6b6b6;
+      border: 1px solid #666; }
+.generator-domain .domain-dependencies {
+  margin-top: 10px; }
+.generator-domain .subdomains-card {
+  padding-left: 10px; }
+.generator-domain .input-group-addon {
+  min-width: 45px; }
+
+.generator-function > table {
+  width: 100%; }
+  .generator-function > table th {
+    padding-bottom: 5px; }
+    .generator-function > table th.cases-header-ratio {
+      text-align: center; }
+    .generator-function > table th.cases-header-freqpb {
+      text-align: left; }
+  .generator-function > table tr.case-row {
+    height: 35px; }
+    .generator-function > table tr.case-row .case-value .input-group {
+      width: 100%; }
+    .generator-function > table tr.case-row .case-value .form-control {
+      height: 29px;
+      width: 100% !important; }
+    .generator-function > table tr.case-row .case-value .void-input {
+      border: none;
+      box-shadow: none; }
+      .generator-function > table tr.case-row .case-value .void-input:focus {
+        outline: none; }
+    .generator-function > table tr.case-row .case-value .input-group-btn {
+      width: 1% !important; }
+    .generator-function > table tr.case-row .case-hist-filler > div {
+      padding: 0;
+      margin: 0;
+      border-top: 1px solid #cccccc;
+      height: 1px; }
+    .generator-function > table tr.case-row .case-ratio {
+      width: 50px;
+      vertical-align: middle;
+      display: inline-block;
+      text-align: center; }
+      .generator-function > table tr.case-row .case-ratio input {
+        width: 4rem;
+        text-align: center;
+        border: 1px solid #ddd; }
+    .generator-function > table tr.case-row .case-freqpb {
+      text-align: left; }
+      .generator-function > table tr.case-row .case-freqpb .progress {
+        border: none;
+        display: inline-block;
+        width: 150px;
+        height: 34px;
+        margin: 0 50px 0 0;
+        padding: 0;
+        overflow: visible;
+        vertical-align: middle;
+        position: relative;
+        background: inherit; }
+        .generator-function > table tr.case-row .case-freqpb .progress .progress-bar {
+          background-color: rgba(70, 130, 180, 0.5);
+          box-shadow: none; }
+        .generator-function > table tr.case-row .case-freqpb .progress.pg-hover .ratio-value {
+          display: none; }
+        .generator-function > table tr.case-row .case-freqpb .progress.pg-hover .freq-btn-decrease, .generator-function > table tr.case-row .case-freqpb .progress.pg-hover .freq-btn-increase {
+          display: block; }
+        .generator-function > table tr.case-row .case-freqpb .progress .ratio-value {
+          display: block;
+          position: absolute;
+          top: 9px;
+          width: 50px;
+          text-align: left;
+          padding: 2px;
+          -webkit-transition: left 0.6s ease;
+          -o-transition: left 0.6s ease;
+          transition: left 0.6s ease; }
+        .generator-function > table tr.case-row .case-freqpb .progress .freq-btn-decrease, .generator-function > table tr.case-row .case-freqpb .progress .freq-btn-increase {
+          display: none;
+          position: absolute;
+          top: 0;
+          width: 20px;
+          height: 34px;
+          padding: 10px 0 0 0;
+          width: 20px;
+          text-align: center;
+          padding: 10px 0 0 0;
+          -webkit-transition: left 0.6s ease;
+          -o-transition: left 0.6s ease;
+          transition: left 0.6s ease;
+          -webkit-transition: background-color 0.2s ease;
+          -o-transition: background-color 0.2s ease;
+          transition: background-color 0.2s ease; }
+          .generator-function > table tr.case-row .case-freqpb .progress .freq-btn-decrease:hover, .generator-function > table tr.case-row .case-freqpb .progress .freq-btn-increase:hover {
+            background-color: #EBEBEB;
+            cursor: pointer; }
+        .generator-function > table tr.case-row .case-freqpb .progress .freq-btn-decrease {
+          margin-left: -20px; }
+.generator-function .function-expression label {
+  display: block; }
+.generator-function .function-expression-errors {
+  display: block;
+  color: #ff5a49; }
+.generator-function .function-expression-suggestions {
+  margin-top: 20px; }
+  .generator-function .function-expression-suggestions table td {
+    padding: 5px; }
+    .generator-function .function-expression-suggestions table td code {
+      cursor: pointer; }
+  .generator-function .function-expression-suggestions .suggestion {
+    margin: 5px; }
+.generator-function .used-field {
+  margin-right: 0.4em; }
+
+.generator-visrel .visrel-canvas-simplot-container {
+  position: relative;
+  height: 250px;
+  width: 625px;
+  margin: 5px 10px 5px 0; }
+  .generator-visrel .visrel-canvas-simplot-container .visrel-canvas {
+    position: absolute;
+    top: 5px;
+    left: 45px;
+    width: 560px;
+    height: 220px; }
+  .generator-visrel .visrel-canvas-simplot-container .visrel-simplot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 250px;
+    width: 625px; }
+    .generator-visrel .visrel-canvas-simplot-container .visrel-simplot .axis path,
+    .generator-visrel .visrel-canvas-simplot-container .visrel-simplot .axis line {
+      fill: none;
+      stroke: #000;
+      shape-rendering: crispEdges; }
+    .generator-visrel .visrel-canvas-simplot-container .visrel-simplot .sample-area {
+      fill: #0085ff;
+      opacity: 0.05; }
+    .generator-visrel .visrel-canvas-simplot-container .visrel-simplot .highlighted {
+      stroke: #176fbf;
+      stroke-width: 1px;
+      stroke-dasharray: 3;
+      opacity: 0.2;
+      fill-opacity: 0.5; }
+    .generator-visrel .visrel-canvas-simplot-container .visrel-simplot .line {
+      fill: none;
+      stroke-width: 1px;
+      stroke: #0085ff; }
+    .generator-visrel .visrel-canvas-simplot-container .visrel-simplot .sample-dot {
+      fill: #417bb7; }
+.generator-visrel .slider-table {
+  margin-left: auto;
+  margin-right: auto; }
+  .generator-visrel .slider-table .rzslider {
+    margin: 10px 5px 5px 5px;
+    display: inline-block;
+    width: 350px; }
+    .generator-visrel .slider-table .rzslider .rz-tick {
+      width: 1px;
+      border-radius: 0; }
+    .generator-visrel .slider-table .rzslider .rz-bubble {
+      visibility: hidden !important;
+      display: none !important; }
+  .generator-visrel .slider-table .min-slider-tick {
+    margin-top: -3px;
+    float: left;
+    width: 50px;
+    text-align: center;
+    margin-left: -20px;
+    border: 0;
+    padding: 0; }
+  .generator-visrel .slider-table .max-slider-tick {
+    margin-top: -3px;
+    float: right;
+    width: 50px;
+    text-align: center;
+    margin-right: -20px; }
+.generator-visrel .control-buttons {
+  vertical-align: bottom;
+  padding: 5px; }
+  .generator-visrel .control-buttons .btn {
+    margin: 2px; }
+.generator-visrel .axish {
+  position: relative;
+  text-align: center;
+  margin-left: 10px 10px;
+  margin-right: 10px;
+  height: 30px;
+  width: 560px; }
+  .generator-visrel .axish .graph-tick-line {
+    position: absolute;
+    bottom: 0;
+    left: 27.5px;
+    width: 1px;
+    height: 27px;
+    background: black; }
+  .generator-visrel .axish .source-max {
+    position: absolute;
+    right: 4px;
+    top: 0; }
+    .generator-visrel .axish .source-max input {
+      position: relative;
+      width: 55px;
+      padding: 0;
+      font-size: 10pt;
+      text-align: center;
+      margin-right: -6x; }
+  .generator-visrel .axish .source-min {
+    position: absolute;
+    left: 16px;
+    top: 0; }
+    .generator-visrel .axish .source-min input {
+      position: relative;
+      width: 55px;
+      padding: 0;
+      font-size: 10pt;
+      text-align: center; }
+.generator-visrel .axisv {
+  position: relative;
+  width: 60px;
+  margin-top: 10px;
+  margin-bottom: 10px; }
+  .generator-visrel .axisv .graph-tick-line {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    height: 1px;
+    background: black;
+    width: 55px; }
+  .generator-visrel .axisv .target-max {
+    position: absolute;
+    top: 0; }
+    .generator-visrel .axisv .target-max input {
+      position: relative;
+      width: 55px;
+      padding: 0;
+      font-size: 10pt;
+      text-align: center; }
+  .generator-visrel .axisv .target-min {
+    position: absolute;
+    top: 0; }
+    .generator-visrel .axisv .target-min input {
+      position: relative;
+      width: 55px;
+      padding: 0;
+      font-size: 10pt;
+      text-align: center; }
+
+.generator-timerange label {
+  margin-right: 10px; }
+.generator-timerange td {
+  padding: 5px; }
+
+.generator-daterange label {
+  margin-right: 10px; }
+.generator-daterange td {
+  padding: 5px; }
+
+.dependencies-list {
+  vertical-align: middle; }
+  .dependencies-list .dependencies-label {
+    display: block;
+    float: left;
+    padding-top: 2px;
+    font-size: 80%; }
+  .dependencies-list .fields {
+    display: block;
+    overflow-x: auto;
+    overflow-y: hidden; }
+    .dependencies-list .fields .dependency {
+      cursor: pointer;
+      margin-right: .2em;
+      padding: 0.4em;
+      border: 1px solid #ddd; }
+      .dependencies-list .fields .dependency .fa {
+        margin-left: 0.4em; }
+    .dependencies-list .fields .dependency-selected {
+      background-color: #bdbdbd; }
+    .dependencies-list .fields .dependency-new {
+      -webkit-appearance: none;
+      text-overflow: '';
+      border: 1px solid #ddd;
+      margin: 0;
+      height: 17px;
+      width: 2.8em; }
+      .dependencies-list .fields .dependency-new:focus {
+        outline: none; }
+
+.infer-panel > table {
+  margin-top: 5px; }
+  .infer-panel > table td {
+    vertical-align: top; }
+.infer-panel .infer-panel-label {
+  font-size: 120%;
+  color: gray;
+  padding-left: 10px; }
+.infer-panel .infer-default-panel-sep {
+  background-color: #ddd;
+  width: 1px; }
+.infer-panel .infer-suggestion-panel {
+  float: left;
+  margin: 10px 5px 10px 5px; }
+  .infer-panel .infer-suggestion-panel .panel-heading {
+    text-align: left;
+    padding: 5px 7px; }
+  .infer-panel .infer-suggestion-panel .panel-body {
+    height: 180px;
+    width: 150px; }
+  .infer-panel .infer-suggestion-panel .panel-footer {
+    text-align: right; }
+    .infer-panel .infer-suggestion-panel .panel-footer .btn {
+      padding: 2px 15px 2px 15px; }
+  .infer-panel .infer-suggestion-panel .example {
+    margin: 0 0 5px; }
+  .infer-panel .infer-suggestion-panel .function {
+    text-align: center; }
+.infer-panel .infer-suggestion-panel-default {
+  margin-right: 10px; }
+.infer-panel .infer-suggestion-panel-option {
+  margin-left: 10px; }
+
+.navbar-default {
+  margin-bottom: 0 !important; }
+  .navbar-default .load-save-model-dropdown {
+    width: 37px;
+    overflow: hidden; }
+    .navbar-default .load-save-model-dropdown input[type="file"] {
+      color: transparent;
+      display: inline-block; }
+  .navbar-default .navbar-caption {
+    vertical-align: middle;
+    color: white; }
+  .navbar-default .btn {
+    padding-top: 2px;
+    padding-bottom: 1px; }
+  .navbar-default .data-volume {
+    margin-top: 11px;
+    margin-right: 0 !important; }
+    .navbar-default .data-volume input {
+      color: black;
+      width: 50px;
+      height: 1.5rem;
+      font-size: 13px; }
+  .navbar-default .generation-status {
+    position: absolute;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%; }
+    .navbar-default .generation-status .generation-status-progressbar {
+      background: #81b745;
+      width: 20%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      height: 100%; }
+
+/*# sourceMappingURL=main.css.map */

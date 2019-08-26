@@ -1,0 +1,29 @@
+{
+  "model": {
+    "airport": {
+      "type": "string",
+      "dependencies": ["country", "state"],
+      "generator": {
+        "domain": "usairports/all",
+        "join": "state"
+      }
+    },
+    "state": {
+      "type": "string",
+      "generator": {
+        "domain": "usstates/all"
+      }
+    },
+    "country": {
+      "type": "string",
+      "generator": {
+        "function": "'US'"
+      }
+    }
+  },
+  "data": {
+    "to-add": 10,
+    "tuples": [
+    ]
+  }
+}
