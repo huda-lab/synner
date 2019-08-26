@@ -8,6 +8,12 @@ the inherent randomness of statistical data generation.
 
 ![screenshot](https://github.com/miromannino/synner/blob/resources/synner-screenshot.png)
 
+
+## Publications
+
+- [UIST'19 - Is this Real? Generating Synthetic Data that Looks Real](https://github.com/dtl-nyuad/synner/raw/resources/Synner-UIST2019.pdf)
+
+
 ## Videos
 
 [Short video version](https://youtu.be/ez2Tge5Bf2M)
