@@ -13,7 +13,7 @@ the inherent randomness of statistical data generation.
 
 **[Is this Real? Generating Synthetic Data that Looks Real](https://github.com/dtl-nyuad/synner/raw/resources/Synner-UIST2019.pdf)**
 <br/>
-<span style="font-size:80%">Miro Mannino, Azza Abouzied - UIST'2019</span>
+<span style="font-size:80%">Miro Mannino, Azza Abouzied - UIST'19</span>
 
 ## Videos
 
