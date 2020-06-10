@@ -11,15 +11,21 @@ the inherent randomness of statistical data generation.
 
 ## Publications
 
-**[Is this Real? Generating Synthetic Data that Looks Real](https://github.com/huda-lab/synner/raw/resources/Synner-UIST2019.pdf)**
+**[Is this Real? Generating Synthetic Data that Looks Real](https://dl.acm.org/doi/10.1145/3332165.3347866)**
 <br/>
 <span style="font-size:80%">Miro Mannino, Azza Abouzied - UIST'19</span>
+
+**[Synner: Generating Realistic Synthetic Data](https://dl.acm.org/doi/abs/10.1145/3318464.3384696)**
+<br/>
+<span style="font-size:80%">Miro Mannino, Azza Abouzied - SIGMOD'20</span>
 
 ## Videos
 
 [Short video version](https://youtu.be/ez2Tge5Bf2M)
 
 [Extended video version](https://youtu.be/BH9tiuoayp0)
+
+[Demo session](https://youtu.be/6W99fj9bB0U)
 
 ## Repository Content
 
