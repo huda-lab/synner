@@ -5,7 +5,7 @@ properties of the dataset such as each field’s statistical distribution, its d
 It provides instant feedback on every user interaction by updating multiple visualizations of the generated dataset and 
 even suggests data generation specifications from a few user examples and interactions. Synner visually communicates 
 the inherent randomness of statistical data generation. 
-
+<br/><br/>
 ![screenshot](https://github.com/huda-lab/synner/blob/resources/synner-ui-sigmod.png)
 
 
@@ -25,7 +25,7 @@ the inherent randomness of statistical data generation.
 
 [Extended video version](https://youtu.be/BH9tiuoayp0)
 
-[Demo session](https://youtu.be/6W99fj9bB0U)
+[SIGMOD'20 - Demo session](https://youtu.be/6W99fj9bB0U)
 
 ## Repository Content
 
