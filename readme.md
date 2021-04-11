@@ -21,11 +21,11 @@ the inherent randomness of statistical data generation.
 
 ## Videos
 
-[Short video version](https://youtu.be/ez2Tge5Bf2M)
+[Demo video](https://www.youtube.com/watch?v=5LuHyJsKY3I)
 
-[Extended video version](https://youtu.be/BH9tiuoayp0)
+[Short Demo video](https://www.youtube.com/watch?v=dS6dS5JdNr8)
 
-[SIGMOD'20 - Demo session](https://youtu.be/6W99fj9bB0U)
+[SIGMOD'20 - Demo session](https://youtu.be/2LaLpc2r1U4)
 
 ## Repository Content
 
