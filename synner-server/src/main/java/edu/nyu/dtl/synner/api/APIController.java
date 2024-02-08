@@ -1,15 +1,5 @@
 package edu.nyu.dtl.synner.api;
 
-import com.amazonaws.AmazonServiceException;
-import com.amazonaws.auth.AWSStaticCredentialsProvider;
-import com.amazonaws.auth.BasicAWSCredentials;
-import com.amazonaws.regions.Regions;
-import com.amazonaws.auth.BasicSessionCredentials;
-import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
-import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
-import com.amazonaws.services.dynamodbv2.model.*;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -18,16 +8,14 @@ import edu.nyu.dtl.synner.core.datamodel.Table;
 import edu.nyu.dtl.synner.core.GeneratorInfo;
 import edu.nyu.dtl.synner.core.generators.domain.DomainsManager;
 import edu.nyu.dtl.synner.core.parser.DataParser;
-import edu.nyu.dtl.synner.core.parser.RelationParser;
 import edu.nyu.dtl.synner.core.infer.*;
-import edu.nyu.dtl.synner.model.DownloadContact;
-import edu.nyu.dtl.synner.model.RequestResponseMessage;
+import edu.nyu.dtl.synner.core.parser.RelationParser;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
+import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.StringReader;
 import java.sql.Connection;
@@ -37,16 +25,6 @@ import java.util.*;
 @RestController
 @RequestMapping("/api")
 public class APIController {
-
-    // synner-app user
-    BasicAWSCredentials awsCreds = new BasicAWSCredentials(
-            "AKIA2UC74TZPOBBLDN3A",
-            "tAXRlq3awRh3QzUqj7mgGWeI9G7nWPM0haT/EH2L");
-    final AmazonDynamoDB ddb = AmazonDynamoDBClientBuilder.standard()
-            .withRegion(Regions.US_EAST_2)
-            .withCredentials(new AWSStaticCredentialsProvider(awsCreds))
-            .build();
-
 
     @ExceptionHandler
     void handleIllegalArgumentException(IllegalArgumentException e, HttpServletResponse response) throws IOException {
@@ -102,15 +80,6 @@ public class APIController {
         }
 
         return inferResponses;
-    }
-
-    @RequestMapping(value = "/downloadrequest", produces = "application/json", method = RequestMethod.POST)
-    public @ResponseBody
-    RequestResponseMessage downloadRequest(@RequestBody DownloadContact contactDetails) throws IOException, SQLException {
-        DynamoDBMapper mapper = new DynamoDBMapper(ddb);
-        mapper.save(contactDetails);
-
-        return new RequestResponseMessage("ok", "");
     }
 
 }

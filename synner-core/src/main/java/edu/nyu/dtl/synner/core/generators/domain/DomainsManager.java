@@ -3,6 +3,7 @@ package edu.nyu.dtl.synner.core.generators.domain;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import com.opencsv.CSVReader;
+import com.opencsv.exceptions.CsvValidationException;
 //import com.zaxxer.hikari.HikariConfig;
 //import com.zaxxer.hikari.HikariDataSource;
 
@@ -30,7 +31,7 @@ public class DomainsManager {
 //        return ds.getConnection();
     }
 
-    public static void loadDataset(InputStream inputStream) throws SQLException {
+    public static void loadDataset(InputStream inputStream) throws SQLException, CsvValidationException {
         domainCachedList = null;
         Connection c = getConnection();
         PreparedStatement existTableStm = c.prepareStatement("select exists(select 1 from sqlite_master where type = 'table' and tbl_name = ?)");
@@ -161,7 +162,7 @@ public class DomainsManager {
         c.close();
     }
 
-    public static void readDescriptionInput(InputStream inputStream) throws SQLException {
+    public static void readDescriptionInput(InputStream inputStream) throws SQLException, CsvValidationException {
         domainCachedList = null;
         Connection c = getConnection();
 

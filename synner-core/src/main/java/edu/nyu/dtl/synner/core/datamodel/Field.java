@@ -2,7 +2,7 @@ package edu.nyu.dtl.synner.core.datamodel;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import edu.nyu.dtl.synner.core.generators.Generator;
-import jdk.nashorn.api.scripting.JSObject;
+import org.graalvm.polyglot.Value;
 
 import javax.script.*;
 import java.util.ArrayList;
@@ -38,7 +38,7 @@ public class Field implements Comparable<Field> {
     @JsonProperty
     private Generator generator; // used as generator, or as fallback in case of relationships between columns
 
-    JSObject compiledExpression;
+    Value compiledExpression;
 
     private ScriptEngineManager factory;
     private ScriptEngine engine;
@@ -105,7 +105,7 @@ public class Field implements Comparable<Field> {
         sc.setBindings(engine.createBindings(), ScriptContext.ENGINE_SCOPE);
         engine.eval("function conditionExpression(" + this.name + "){ return !!(" + this.filter + ");}", sc);
 
-        compiledExpression = (JSObject) sc.getAttribute("conditionExpression", ScriptContext.ENGINE_SCOPE);
+        compiledExpression = (Value) sc.getAttribute("conditionExpression", ScriptContext.ENGINE_SCOPE);
     }
 
     public String getFilter() {
@@ -130,7 +130,8 @@ public class Field implements Comparable<Field> {
 
     public boolean evaluateFilter(Object fieldValue) {
         if (compiledExpression == null) return true;
-        return (boolean) compiledExpression.call(null, fieldValue);
+        Value result = compiledExpression.execute((Object) fieldValue);
+        return result.asBoolean();
     }
 
     @Override

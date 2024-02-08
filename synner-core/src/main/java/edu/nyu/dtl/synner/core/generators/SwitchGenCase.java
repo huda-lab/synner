@@ -1,9 +1,9 @@
 package edu.nyu.dtl.synner.core.generators;
 
 import edu.nyu.dtl.synner.core.datamodel.Field;
-import jdk.nashorn.api.scripting.JSObject;
+import org.graalvm.polyglot.*;
+import org.graalvm.polyglot.proxy.ProxyArray;
 
-import javax.script.*;
 import java.util.List;
 
 public class SwitchGenCase<T extends Comparable> {
@@ -11,41 +11,38 @@ public class SwitchGenCase<T extends Comparable> {
     final String expression;
     final Generator<T> generator;
 
-    JSObject compiledExpression;
+    Value compiledExpression;
 
-    private ScriptEngineManager factory;
-    private ScriptEngine engine;
+    private Context context;
 
-    public SwitchGenCase(String expression, List<Field> dependencies, Generator<T> generator) throws ScriptException {
+    public SwitchGenCase(String expression, List<Field> dependencies, Generator<T> generator) {
         this.expression = expression;
         this.dependencies = dependencies;
         this.generator = generator;
 
-        factory = new ScriptEngineManager();
-        engine = factory.getEngineByName("JavaScript");
+        context = Context.newBuilder("js").allowAllAccess(true).build();
 
-        ScriptContext sc = new SimpleScriptContext();
-        sc.setBindings(engine.createBindings(), ScriptContext.ENGINE_SCOPE);
-
-        StringBuilder functionDefBldr = new StringBuilder("function conditionExpression(");
+        StringBuilder functionDefBuilder = new StringBuilder("function conditionExpression(");
         if (dependencies != null) {
             for (int i = 0; i < dependencies.size(); i++) {
-                functionDefBldr.append(dependencies.get(i).getName());
-                if (i < dependencies.size() - 1) functionDefBldr.append(",");
+                functionDefBuilder.append(dependencies.get(i).getName());
+                if (i < dependencies.size() - 1) functionDefBuilder.append(",");
             }
         }
-        functionDefBldr.append("){ return !!(").append(expression).append(");}");
+        functionDefBuilder.append("){ return !!(").append(expression).append(");}");
 
-        engine.eval(functionDefBldr.toString(), sc);
+        context.eval("js", functionDefBuilder.toString());
 
-        compiledExpression = (JSObject) sc.getAttribute("conditionExpression", ScriptContext.ENGINE_SCOPE);
+        compiledExpression = context.getBindings("js").getMember("conditionExpression");
     }
 
     public boolean satisfy(Comparable[] inputs) {
-        return (boolean) compiledExpression.call(null, inputs);
+        Value result = compiledExpression.execute((Object) inputs);
+        return result.asBoolean();
     }
 
     public boolean satisfy() {
-        return (boolean) compiledExpression.call(null);
+        Value result = compiledExpression.execute();
+        return result.asBoolean();
     }
 }

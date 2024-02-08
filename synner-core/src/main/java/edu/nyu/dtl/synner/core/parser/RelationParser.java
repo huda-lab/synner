@@ -236,7 +236,7 @@ public class RelationParser {
                 }
             }
             return cg;
-        } catch (ScriptException e) {
+        } catch (Exception e) {
             throw new IllegalArgumentException("The defined conditional expression contains errors", e);
         }
     }

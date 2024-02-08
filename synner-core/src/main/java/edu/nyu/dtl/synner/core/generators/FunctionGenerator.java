@@ -3,10 +3,13 @@ package edu.nyu.dtl.synner.core.generators;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import edu.nyu.dtl.synner.core.datamodel.Field;
 import edu.nyu.dtl.synner.core.generators.domain.DomainGen;
-import jdk.nashorn.api.scripting.JSObject;
+import org.graalvm.polyglot.*;
+import org.graalvm.polyglot.proxy.ProxyExecutable;
+import org.graalvm.polyglot.proxy.ProxyObject;
 
-import javax.script.*;
+import javax.script.ScriptException;
 import java.util.List;
+import java.util.Random;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
@@ -15,10 +18,10 @@ public class FunctionGenerator<T extends Comparable> implements Generator<T> {
     @JsonProperty
     String strFunction;
 
-    JSObject function;
+    Value function;
 
-    private ScriptEngineManager factory;
-    private ScriptEngine engine;
+    private Context context;
+    private static Random rnd = new Random();
 
     private static String function_domain(String domain) throws Exception {
         DomainGen dGen = new DomainGen(domain);
@@ -28,52 +31,34 @@ public class FunctionGenerator<T extends Comparable> implements Generator<T> {
     public FunctionGenerator(String strFunction, List<Field> inputFields) throws ScriptException {
         this.strFunction = strFunction;
 
-        factory = new ScriptEngineManager();
-        engine = factory.getEngineByName("JavaScript");
+        context = Context.newBuilder("js").allowAllAccess(true).build();
 
-        ScriptContext sc = new SimpleScriptContext();
-        sc.setBindings(engine.createBindings(), ScriptContext.ENGINE_SCOPE);
-
-        Function<String, String> fDom = (String domain) -> {
+        Function<String, String> fDom = domain -> {
             try {
                 return function_domain(domain);
             } catch (Exception e) {
                 return null;
             }
         };
-        sc.setAttribute("domain", fDom, ScriptContext.ENGINE_SCOPE);
+        context.getBindings("js").putMember("domain", fDom);
 
-        BiFunction<Number, Number, Number> fUniform = (Number min, Number max) -> {
-            try {
-                return rnd.nextDouble() * (max.doubleValue() - min.doubleValue()) + min.doubleValue();
-            } catch (Exception e) {
-                return null;
-            }
-        };
-        sc.setAttribute("uniform", fUniform, ScriptContext.ENGINE_SCOPE);
+        BiFunction<Number, Number, Number> fUniform = (min, max) -> rnd.nextDouble() * (max.doubleValue() - min.doubleValue()) + min.doubleValue();
+        context.getBindings("js").putMember("uniform", fUniform);
 
-        BiFunction<Number, Number, Number> fNormal = (Number mean, Number stdev) -> {
-            try {
-                return rnd.nextGaussian() * stdev.doubleValue() + mean.doubleValue();
-            } catch (Exception e) {
-                return null;
-            }
-        };
-        sc.setAttribute("normal", fNormal, ScriptContext.ENGINE_SCOPE);
+        BiFunction<Number, Number, Number> fNormal = (mean, stdev) -> rnd.nextGaussian() * stdev.doubleValue() + mean.doubleValue();
+        context.getBindings("js").putMember("normal", fNormal);
 
-        StringBuilder functionDefBldr = new StringBuilder("function generatorFunction(");
-            if (inputFields != null) {
-            for (int i = 0; i < inputFields.size(); i++) {
-                functionDefBldr.append(inputFields.get(i).getName());
-                functionDefBldr.append(",");
+        StringBuilder functionDefBuilder = new StringBuilder("function generatorFunction(");
+        if (inputFields != null) {
+            for (Field inputField : inputFields) {
+                functionDefBuilder.append(inputField.getName()).append(",");
             }
-            functionDefBldr.append("random");
         }
-        functionDefBldr.append("){ return (").append(strFunction).append(");}");
+        functionDefBuilder.append("random){ return (").append(strFunction).append(");}");
 
-        engine.eval(functionDefBldr.toString(), sc);
+        context.eval("js", functionDefBuilder.toString());
 
-        function = (JSObject) sc.getAttribute("generatorFunction", ScriptContext.ENGINE_SCOPE);
+        function = context.getBindings("js").getMember("generatorFunction");
     }
 
     public FunctionGenerator(String strFunction) throws ScriptException {
@@ -82,17 +67,16 @@ public class FunctionGenerator<T extends Comparable> implements Generator<T> {
 
     @Override
     public T generate(boolean errorMode, boolean previewMode) {
-        return (T) function.call(null, rnd.nextDouble());
+        Value result = function.execute(rnd.nextDouble());
+        return (T) result.as(Comparable.class);
     }
 
     @Override
     public T generate(Comparable[] inputs, boolean errorMode, boolean previewMode) {
         Object[] inpts = new Object[inputs.length + 1];
-        for (int i = 0; i < inputs.length; i++) {
-            inpts[i] = inputs[i];
-        }
+        System.arraycopy(inputs, 0, inpts, 0, inputs.length);
         inpts[inputs.length] = rnd.nextDouble();
-        return (T) function.call(null, inpts);
+        Value result = function.execute(inpts);
+        return (T) result.as(Comparable.class);
     }
-
 }

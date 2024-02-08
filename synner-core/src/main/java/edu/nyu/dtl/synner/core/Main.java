@@ -12,8 +12,6 @@ import edu.nyu.dtl.synner.core.parser.RelationParser;
 
 import java.io.File;
 import java.io.FileReader;
-import java.io.IOException;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 

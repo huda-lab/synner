@@ -1,5 +1,6 @@
 package edu.nyu.dtl.synner.core.generators;
 
+import com.opencsv.exceptions.CsvValidationException;
 import edu.nyu.dtl.synner.core.generators.domain.DomainGen;
 import edu.nyu.dtl.synner.core.generators.domain.DomainInfo;
 import edu.nyu.dtl.synner.core.generators.domain.DomainsManager;
@@ -28,7 +29,7 @@ public class DomainGenTest {
 
     @Test
     @Ignore
-    public void loadData() throws SQLException {
+    public void loadData() throws SQLException, CsvValidationException {
 //        DomainsManager.loadDataset(DomainGen.class.getClassLoader().getResourceAsStream("db_creation/cities.csv"));
 //        DomainsManager.loadDataset(DomainGen.class.getClassLoader().getResourceAsStream("db_creation/continents.csv"));
 //        DomainsManager.loadDataset(DomainGen.class.getClassLoader().getResourceAsStream("db_creation/continents-regions.csv"));

@@ -1,6 +1,7 @@
 package edu.nyu.dtl.synner.core.generators;
 
 import edu.nyu.dtl.synner.core.datamodel.Field;
+import org.graalvm.polyglot.PolyglotException;
 
 import javax.script.ScriptException;
 import java.util.ArrayList;
@@ -40,7 +41,7 @@ public class SwitchGen<T extends Comparable> implements Generator<T> {
         return elseCase.generate(inputs, errorMode, previewMode);
     }
 
-    public void addCondition(String expression, Generator<T> then) throws ScriptException {
+    public void addCondition(String expression, Generator<T> then) throws PolyglotException {
         cases.add(new SwitchGenCase<>(expression, dependencies, then));
     }
 
