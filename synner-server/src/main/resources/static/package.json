@@ -2,7 +2,8 @@
   "name": "synner",
   "version": "1.0.0",
   "scripts": {
-    "live-server": "live-server . --port=8041 --host=localhost --ignorePattern=\".*\\.scss\" --verbose"
+    "live-server": "live-server . --port=8041 --host=localhost --ignorePattern=\".*\\.scss\" --verbose",
+    "postinstall": "bower install"
   },
   "author": "Miro Mannino",
   "dependencies": {
