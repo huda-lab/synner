@@ -42,8 +42,14 @@ Synner can be run as a server, which also provides the user interface, or as a c
 
 Synner server can be run by launching the main static method in `edu.nyu.dtl.synner.SynnerServerApplication`
 
-This method will run Synner's server as a Spring Boot application in the port 5000
+This method will run Synner's server as a Spring Boot application in the port 5042
 
+#### Install front-end dependencies
+
+```bash
+cd /path/to/synner/synner-server/src/main/resources/static
+bower install
+```
 
 ### Command line interface
 
@@ -55,7 +61,6 @@ This method accepts a path of a CSV file as console argument, where specificatio
 ```
   java -classpath "..." edu.nyu.dtl.synner.core.Main my-specifications.json
 ```
-
 
 
 
