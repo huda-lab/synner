@@ -23,6 +23,7 @@ import java.sql.SQLException;
 import java.util.*;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/api")
 public class APIController {
 

@@ -39,11 +39,11 @@ public class Main {
 
         GeneratedDataset.DataField[][] data = gdata.getData();
         System.out.println(rel.getFields());
-        for (int i = 0; i < data.length; i++) {
+        for (GeneratedDataset.DataField[] datum : data) {
             System.out.print("[");
-            for (int j = 0; j < data[i].length; j++) {
-                System.out.print(data[i][j].data);
-                if (j < data[i].length - 1) System.out.print(", ");
+            for (int j = 0; j < datum.length; j++) {
+                System.out.print(datum[j].data);
+                if (j < datum.length - 1) System.out.print(", ");
             }
             System.out.println("]");
         }
