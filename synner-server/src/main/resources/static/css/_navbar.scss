@@ -2,12 +2,9 @@
   margin-bottom: 0 !important;
 
   .load-save-model-dropdown {
-    width: 37px;
     overflow: hidden;
-
-    input[type="file"] {
-      color: transparent;
-      display: inline-block;
+    input {
+      display: none;
     }
   }
 

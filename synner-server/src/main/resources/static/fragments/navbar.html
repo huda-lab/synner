@@ -1,46 +1,89 @@
 <div class="navbar navbar-default">
-    <a class="navbar-brand" href="#">Synner</a>
-    <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Add Field <span>+</span>
-                <!--<span class="caret"></span>-->
-            </a>
-            <ul class="dropdown-menu">
-                <li><a href="javascript:void(0)" ng-click="addColumn('integer')">Integer <small>1234</small></a></li>
-                <li><a href="javascript:void(0)" ng-click="addColumn('decimal')">Decimal <small>1.123</small></a></li>
-                <li><a href="javascript:void(0)" ng-click="addColumn('string')">Text <small>abcd</small></a></li>
-                <li><a href="javascript:void(0)" ng-click="addColumn('time')">Time <small>12:34</small></a></li>
-                <li><a href="javascript:void(0)" ng-click="addColumn('date')">Date <small>14/12/2010</small></a></li>
-            </ul>
+  <a class="navbar-brand" href="#">Synner</a>
+  <ul class="nav navbar-nav navbar-right">
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        Add Field <span>+</span>
+        <!--<span class="caret"></span>-->
+      </a>
+      <ul class="dropdown-menu">
+        <li>
+          <a href="javascript:void(0)" ng-click="addColumn('integer')"
+            >Integer <small>1234</small></a
+          >
         </li>
         <li>
-            <form class="navbar-form data-volume">
-                <div class="form-group">
-                    <span class="navbar-caption">Dataset size:</span>
-                    <input type="number" min="0" step="1" class="form-control" ng-model="model.dataVolume">
-                </div>
-            </form>
+          <a href="javascript:void(0)" ng-click="addColumn('decimal')"
+            >Decimal <small>1.123</small></a
+          >
         </li>
         <li>
-            <a data-toggle="modal" data-target="#download-form" href="#">Download Data</a>
+          <a href="javascript:void(0)" ng-click="addColumn('string')"
+            >Text <small>abcd</small></a
+          >
         </li>
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Script
-                <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu load-save-model-dropdown">
-                <li><a href="javascript:void(0)">
-                    <span>Load</span>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="file" id="modeluploadfileinput"></a></li>
-                <li><a href="javascript:void(0)" ng-click="saveConfig()">Save</a></li>
-            </ul>
+        <li>
+          <a href="javascript:void(0)" ng-click="addColumn('time')"
+            >Time <small>12:34</small></a
+          >
         </li>
-        <li><a href="#"></a></li>
-    </ul>
-    <div class="generation-status">
-        <div style="display:none" class="generation-status-progressbar"></div>
-    </div>
+        <li>
+          <a href="javascript:void(0)" ng-click="addColumn('date')"
+            >Date <small>14/12/2010</small></a
+          >
+        </li>
+      </ul>
+    </li>
+    <li>
+      <form class="navbar-form data-volume">
+        <div class="form-group">
+          <span class="navbar-caption">Dataset size:</span>
+          <input
+            type="number"
+            min="0"
+            step="1"
+            class="form-control"
+            ng-model="model.dataVolume"
+          />
+        </div>
+      </form>
+    </li>
+    <li>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        Script
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu download-dropdown">
+        <li>
+          <a href="javascript:void(0)" ng-click="download('json')"> JSON </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" ng-click="download('csv')"> CSV </a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        Script
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu load-save-model-dropdown">
+        <li>
+          <a href="javascript:void(0)">
+            <span>Load</span>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="file" id="modeluploadfileinput" />
+            <label for="modeluploadfileinput" class="btn btn-default"
+              >Input</label
+            >
+          </a>
+        </li>
+        <li><a href="javascript:void(0)" ng-click="saveConfig()">Save</a></li>
+      </ul>
+    </li>
+    <li><a href="#"></a></li>
+  </ul>
+  <div class="generation-status">
+    <div style="display: none" class="generation-status-progressbar"></div>
+  </div>
 </div>

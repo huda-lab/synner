@@ -1,85 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Synner</title>
 
-    <link rel="stylesheet" href="css/vendor.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/vendor.css" />
+    <link rel="stylesheet" href="css/main.css" />
 
     <!--<script src="vendor-static/require.js"></script>-->
     <!--<script>-->
-      <!--requirejs.config({-->
-        <!--baseUrl: 'vendor',-->
-        <!--paths: {-->
-          <!--// the left side is the module ID,-->
-          <!--// the right side is the path to-->
-          <!--// the jQuery file, relative to baseUrl.-->
-          <!--// Also, the path should NOT include-->
-          <!--// the '.js' file extension. This example-->
-          <!--// is using jQuery 1.9.0 located at-->
-          <!--// js/lib/jquery-1.9.0.js, relative to-->
-          <!--// the HTML page.-->
-          <!--// jquery: 'jquery-1.9.0'-->
-        <!--}-->
-      <!--});-->
+    <!--requirejs.config({-->
+    <!--baseUrl: 'vendor',-->
+    <!--paths: {-->
+    <!--// the left side is the module ID,-->
+    <!--// the right side is the path to-->
+    <!--// the jQuery file, relative to baseUrl.-->
+    <!--// Also, the path should NOT include-->
+    <!--// the '.js' file extension. This example-->
+    <!--// is using jQuery 1.9.0 located at-->
+    <!--// js/lib/jquery-1.9.0.js, relative to-->
+    <!--// the HTML page.-->
+    <!--// jquery: 'jquery-1.9.0'-->
+    <!--}-->
+    <!--});-->
     <!--</script>-->
 
-    <script type="text/javascript" src="vendor/jquery/dist/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="vendor/jquery/dist/jquery.min.js"
+    ></script>
     <script type="text/javascript" src="vendor/angular/angular.min.js"></script>
-    <script type="text/javascript" src="vendor/angular-resource/angular-resource.min.js"></script>
-    <script type="text/javascript" src="vendor/angular-sanitize/angular-sanitize.min.js"></script>
-    <script type="text/javascript" src="vendor/angular-animate/angular-animate.min.js"></script>
-    <script type="text/javascript" src="vendor/angular-filter/dist/angular-filter.js"></script>
-    <script type="text/javascript" src="vendor/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+    <script
+      type="text/javascript"
+      src="vendor/angular-resource/angular-resource.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="vendor/angular-sanitize/angular-sanitize.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="vendor/angular-animate/angular-animate.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="vendor/angular-filter/dist/angular-filter.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="vendor/bootstrap-sass-official/assets/javascripts/bootstrap.js"
+    ></script>
     <script type="text/javascript" src="vendor/lodash/lodash.min.js"></script>
     <script type="text/javascript" src="vendor/d3/d3.min.js"></script>
-    <script type="text/javascript" src="vendor/jstat/dist/jstat.min.js"></script>
-    <script type="text/javascript" src="vendor/paper/dist/paper-full.js"></script>
+    <script
+      type="text/javascript"
+      src="vendor/jstat/dist/jstat.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="vendor/paper/dist/paper-full.js"
+    ></script>
     <script type="text/javascript" src="vendor/esprima/esprima.js"></script>
-    <script type="text/javascript" src="vendor/angularjs-slider/dist/rzslider.min.js"></script>
-    <script type="text/javascript" src="vendor/ace-builds/src-min-noconflict/ace.js"></script>
-    <script type="text/javascript" src="vendor-custom/angular-ui-ace/ui-ace.js"></script>
+    <script
+      type="text/javascript"
+      src="vendor/angularjs-slider/dist/rzslider.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="vendor/ace-builds/src-min-noconflict/ace.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="vendor-custom/angular-ui-ace/ui-ace.js"
+    ></script>
 
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/infer.js"></script>
     <script type="text/javascript" src="js/functions.js"></script>
     <script type="text/javascript" src="js/model.js"></script>
     <script type="text/javascript" src="js/directives/generator.js"></script>
-    <script type="text/javascript" src="js/directives/generator-switch.js"></script>
-    <script type="text/javascript" src="js/directives/generator-distribution.js"></script>
-    <script type="text/javascript" src="js/directives/generator-distribution-main.js"></script>
-    <script type="text/javascript" src="js/directives/generator-distribution-custom.js"></script>
-    <script type="text/javascript" src="js/directives/generator-string-enum.js"></script>
-    <script type="text/javascript" src="js/directives/generator-domain.js"></script>
-    <script type="text/javascript" src="js/directives/generator-number-enum.js"></script>
-    <script type="text/javascript" src="js/directives/generator-function.js"></script>
-    <script type="text/javascript" src="js/directives/generator-visrel.js"></script>
-    <script type="text/javascript" src="js/directives/generator-timerange.js"></script>
-    <script type="text/javascript" src="js/directives/generator-daterange.js"></script>
+    <script
+      type="text/javascript"
+      src="js/directives/generator-switch.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="js/directives/generator-distribution.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="js/directives/generator-distribution-main.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="js/directives/generator-distribution-custom.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="js/directives/generator-string-enum.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="js/directives/generator-domain.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="js/directives/generator-number-enum.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="js/directives/generator-function.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="js/directives/generator-visrel.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="js/directives/generator-timerange.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="js/directives/generator-daterange.js"
+    ></script>
     <script type="text/javascript" src="js/directives/infer-panel.js"></script>
     <script type="text/javascript" src="js/directives/data-table.js"></script>
-    <script type="text/javascript" src="js/directives/dependencies-list.js"></script>
+    <script
+      type="text/javascript"
+      src="js/directives/dependencies-list.js"
+    ></script>
     <script type="text/javascript" src="js/directives/navbar.js"></script>
-    <script type="text/javascript" src="js/directives/download-form.js"></script>
-    <script type="text/javascript" src="js/directives/visual-summary.js"></script>
+    <script
+      type="text/javascript"
+      src="js/directives/visual-summary.js"
+    ></script>
     <script type="text/javascript" src="js/directives/field-filter.js"></script>
-    <script type="text/javascript" src="js/directives/field-error-missings.js"></script>
+    <script
+      type="text/javascript"
+      src="js/directives/field-error-missings.js"
+    ></script>
     <script type="text/javascript" src="js/api.js"></script>
-</head>
-<body ng-app="Synner" ng-cloak ng-controller="MainCtrl">
-<navbar></navbar>
-<div class="main-container">
-    <table-data></table-data>
-    <div ng-include="'fragments/main-properties-panel.html'" include-replace></div>
-</div>
-<div ng-if="model.generationError" class="error-message">
-    <span class="error-message-label">Error:</span> {{model.generationError}}
-</div>
-<download-form></download-form>
-
-</body>
+  </head>
+  <body ng-app="Synner" ng-cloak ng-controller="MainCtrl">
+    <navbar></navbar>
+    <div class="main-container">
+      <table-data></table-data>
+      <div
+        ng-include="'fragments/main-properties-panel.html'"
+        include-replace
+      ></div>
+    </div>
+    <div ng-if="model.generationError" class="error-message">
+      <span class="error-message-label">Error:</span> {{model.generationError}}
+    </div>
+  </body>
 </html>

@@ -1,9 +1,9 @@
 var Synner = angular.module('Synner', ['ngResource', 'ngAnimate', 'rzModule', 'ui.ace', 'ngSanitize', 'angular.filter']);
 
 Synner.value('Parameters', {
-  DEBUG: true,
+  DEBUG: false,
   SERVER: {
-    DEBUG: '',
+    DEBUG: 'http://localhost:5042/',
     PRODUCTION: ''
   },
   GENERATION_DELAY: 400,
