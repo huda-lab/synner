@@ -17,7 +17,7 @@ angular.module("Synner").directive("navbar", [
           document.body.appendChild(a);
           a.style = "display: none";
           return function (object, fileName) {
-            var blob = new Blob([JSON.stringify(object)], {
+            var blob = new Blob([JSON.stringify(object, null, 2)], {
               type: "octet/stream",
             });
             var url = window.URL.createObjectURL(blob);
@@ -29,24 +29,13 @@ angular.module("Synner").directive("navbar", [
         })();
 
         $scope.saveConfig = function () {
-          var config = {
-            fields: JSON.parse(JSON.stringify(Model.fields)), //fields deep copy
-            dataVolume: Model.dataVolume,
-          };
-          $scope.filterNGHash(config);
+          let config = $scope.model.getGenerationRequest(true, 10);
           $scope.downloadModel(
             config,
             "model-" + new Date().toISOString() + ".json"
           );
         };
 
-        $scope.filterNGHash = function (obj) {
-          if ("$$hashKey" in obj) obj["$$hashKey"] = undefined;
-          for (var p in obj) {
-            if (typeof obj[p] === "object") $scope.filterNGHash(obj[p]);
-          }
-        };
-        
         $scope.processJSON = function (data) {
           let processed = [];
           for (let row of data) {

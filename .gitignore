@@ -1,0 +1,4 @@
+.DS_Store
+synner-core/target/**
+synner-server/target/**
+synner-server/src/main/resources/static/vendor/**
