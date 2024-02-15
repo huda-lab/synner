@@ -6,8 +6,6 @@ It provides instant feedback on every user interaction by updating multiple visu
 even suggests data generation specifications from a few user examples and interactions. Synner visually communicates 
 the inherent randomness of statistical data generation.
 
-<br/><br/>
-
 ![screenshot](https://github.com/huda-lab/synner/blob/resources/synner-ui-sigmod.png)
 
 ## Publications
